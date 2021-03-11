@@ -2,6 +2,11 @@
 
 Ce cours traite de différents aspects de l'ingénierie du logicielle pour un public de développeurs et de statisticiens.
 
+## Prérequis à installer
+
+Les prérequis à installer sont listés dans le fichier [SETUP.md](SETUP.md).  
+Il est demandé de le suivre avant le premier cours.
+
 ## Programme
 
 Ce cours est divisé en 6 chapitres :
