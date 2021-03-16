@@ -11,7 +11,7 @@ Il est demandé de le suivre avant le premier cours.
 
 Ce cours est divisé en 6 chapitres :
 
-- Git avancé : rappels sur l'utilisation de git, travail collaboratif, issues, merge / pull requests
+- [Git avancé](git/README.md) : rappels sur l'utilisation de git, travail collaboratif, issues, merge / pull requests
 - Runtime : lancer du code sans IDE, comprendre l'environnement d'exécution
 - Reproductibilité / portabilité : gestion des dépendances, externalisation de la configuration
 - Introduction aux systèmes Linux : prise en main d'un terminal, commandes classiques
