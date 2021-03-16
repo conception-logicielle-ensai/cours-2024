@@ -1,0 +1,384 @@
+# Git, Git avancé
+
+## Pourquoi Git ?
+<img src="img/versionning_problem.png">
+
+### Préambule
+
+
+Vous avez besoin de Git si : 
+
+- Vous désirez créer projet seul, et vous assurer que si jamais vous faites des changements, vous pouvez retourner en arrière.
+- Vous désirez partager un projet a plusieurs, mais ne pas attendre que la personne qui ait la bonne version sur la clé usb mélange tous les ajouts de code à la main.
+
+Petite histoire de la création de git : https://www.linuxjournal.com/content/git-origin-story
+
+> TLDR: Différentes solutions existaient a l'époque, soit libres, soit payantes mais Linus Torvalds n'aimait pas la solution de l'époque (SVN)
+et travaillait avec beaucoup de développeurs Open Source, il a donc intégré du code via des mails de ses différents contributeurs, mais au bout d'un moment ce n'était plus viable, et donc il a fallu trouver une solution, et Torvalds lança un nouveau projet...
+
+### Un système de gestion de version distribué
+
+<img src="img/version-control-fig3.png" style="border-style:groove">
+
+Git intervient pour répondre aux besoins de versionning d'application et offre une architecture où tous les développeurs disposent de toutes les versions du code. Cela leur permet de revenir sur des versions précédentes pour comprendre l'origine de certaines fonctionnalités ou dysfonctionnements mais également de synchroniser les environnement de travail locaux avec les environnement distants, puisqu'ils sont de même nature (contiennent l'intégralité du projet et de sa vie).
+
+Pour aller plus loin : https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
+
+## Rappels de Git
+
+<img src="img/git-diagram.svg" style="border-style:groove"/>
+
+### Un dossier pour les gouverner tous
+
+Git fonctionne avec un dossier qui lui est propre, le dossier **.git**, ce dossier contient toutes les informations permettant de fonctionner . 
+Il permet par exemple, en conservant les différences entre les différentes version de naviguer d'une version a l'autre.
+
+Pour commencer le versionning d'un projet avec Git, il faut donc créer ce dossier par la commande : 
+
+```git
+git init 
+``` 
+
+Cette commande initialise votre dépôt Git.
+
+Documentation officielle de la commande : https://git-scm.com/docs/git-init
+
+### Creation d'une version
+
+<img src="img/lifecycle.png" style="border-style:groove">
+
+Sur un dépot Git, vous pouvez créer des nouvelles versions en indiquant a Git les fichiers à inclure dans la prochaine version. (staging)
+
+#### Ajout de fichiers
+
+Pour ajouter des fichier pour la prochaine version, la commande classique est **git add**
+
+```
+git add fichier
+git add .
+```
+
+> Git utilise ce qu'on appelle un index, permettant de faire la transition entre le repertoire de travail (working directory) et la version (commit)
+
+Pour savoir à quel états sont vos fichiers, vous pouvez également le vérifier : 
+
+```
+git status
+```
+
+
+Pour aller plus loin : https://shafiul.github.io/gitbook/1_the_git_index.html
+
+
+#### Un commit : Quézako ?
+
+Un commit est une version d'une application à un état sauvegardé dans le dépot Git. 
+
+Lorsque l'ensemble des fichiers ajoutés est cohérent pour la réalisation d'une version, on réalise donc une nouvelle version en créant un **commit**
+
+```
+git commit [options]
+```
+
+exemple : 
+```
+git commit -m "message de commit"
+```
+
+
+Pour aller plus loin : https://git-scm.com/docs/git-commit
+
+
+### Chaine de commits
+
+<img src="img/medium-reflog.png" style="border-style:groove">
+
+
+Sur un dépot git existant, vous pourrez donc accéder aux différentes versions du projet, versions délimitées par des commits. 
+
+Vous pouvez observer la liste des commit du projet avec la commande **git log** :
+
+```
+git log 
+git log --pretty=oneline
+```
+
+Et vous pouvez accéder aux précédentes versions de votre application par l'utilisation d'un **git checkout** :
+```
+git checkout <commit-hash>
+```
+
+Pour aller plus loin : 
+- écrire une belle histoire: https://hackernoon.com/beginners-guide-to-interactive-rebasing-346a3f9c3a6d
+
+### Exercice 1
+
+Un camarade vous confie un de ses projets par mail, disponible [ici](https://minio.lab.sspcloud.fr/conception-logicielle/exo1.zip) mais ne comprend rien à git. 
+
+Il désirerait que vous initialisez le projet sur votre poste de travail, que vous y rajoutiez un fichier README.md à la racine du projet contenant une présentation de son application et que vous l'ajoutiez a l'historique.
+
+
+<details>
+  <summary><bold>Tip</bold></summary>
+
+> Vous pouvez simplement mettre que c'est un hello world
+
+</details> 
+
+Il a ensuite malheureusement perdu accès a sa boite mail et désire récupérer son projet d'origine, accédez y via Git pour le récupérer.
+
+- Bonus : [exercice 1-2](https://minio.lab.sspcloud.fr/conception-logicielle/exo1-2.zip)
+
+### Aller plus loin
+
+- Git mystery
+> Projet git d'enquête sur un meurtre mobilisant diverses compétences sur Git, sympathique pour comprendre les notions et la navigation entre les versions via Git.
+## Git, gitlab, github ...
+
+<img src="img/git-gitlab-github-bitbucket.jpeg">
+
+Avec la réussite de Git, des outils appelées Forges Logicielles sont apparues. Elles permettent de proposer l'hébergement du code source d'application publiques et privées de manière gratuite et offrent d'autres services de gestion ainsi que des interfaces clients appréciables.
+
+- Github est un des leaders du marché, hébergeant une grande partie du code open source et des grands projets ouverts, il est par contre privé.
+- Gitlab est une solution open source qui s'intègre et s'installe dans des sphères privées permettant donc d'héberger du code source et de profiter de services analogues dans un monde plus sécurisé/privé.
+
+### Dépôts centraux
+<img src="img/basic-remote-workflow.png" width="100%">
+
+Pour git, un écosystème de forges logicielle c'est développé permettant le partage de code facilité pour les développeurs et proposant différents services : interface graphique, ressources pour héberger de la documentation ou encore intégration continue.
+
+Les plus célèbres sont probablement GitHub, Gitlab et BitBucket. Proposant pour Github une communauté plus importante mais pour Gitlab qui est un projet OpenSource, une integration facilité dans une infrastructure interne.
+
+
+### Récupération d'un projet
+
+<img src="img/pull.png" width="100%">
+
+Votre projet local peut être rattaché a un projet distant, vous pouvez interagir en ce sens par la commande **git remote**
+
+```git 
+git remote -v 
+git remote add origin <https://url-du-projet>
+``` 
+
+Si vous voulez simplement récupérer un projet hébergé sur un dépôt distant.
+
+
+```git 
+git clone <https://url-du-projet>
+``` 
+
+Pour aller plus loin :
+- Authentification : ssh/https - https://gist.github.com/grawity/4392747
+
+### Travailler a distance
+
+<img src="img/ez-pull-push.png">
+
+#### **Récuperer des changements**
+
+Pour récupérer les changements effectués sur le dépôt la commande la plus utilisée est : 
+```
+git pull
+```
+
+Elle permet de récupérer les changements (commit) et de les ajouter a la copie de travail en local
+
+> Remarque : c'est une opération que l'on effectue souvent avant de vouloir ajouter notre code pour qu'il n'y ait pas de fichiers dont git ne saurait pas quel version prendre
+
+Pour aller plus loin : récuperer des changements sans les intégrer - [git fetch](https://www.atlassian.com/git/tutorials/syncing/git-fetch)
+#### **Envoyer des changements**
+
+
+Pour envoyer vos changements sur un dépot déclaré en remote, on utilise la commande **git push**:
+
+*Cas d'usages classiques*
+
+```bash
+# envoyer vos changements (commits) à votre origin
+git push 
+# envoyer votre code a votre origin et déclarer une branche origin/branch
+git push --set-upstream origin branch
+# envoyer votre code (commits) a votre origin en pushant la branche master
+git push -u origin master
+```
+
+
+
+
+### Exercices
+
+L'objectif de cet exercice est d'appréhender les concepts du travail a distance avec Git.
+
+1) Commencez par créer un compte sur https://gitlab.com/
+2) Une fois connecté, créez un nouveau dépot appelé tp1-conception-logicielle
+3) Envoyez le premier projet que vous avez créé a l'exercice 1 sur ce dépot
+4) Récupérer le contenu du projet d'un autre camarade
+5) Ajoutez un de vos camarades sur le dépot (rôle développer/maintainer) et donnez lui le lien
+6) Après sa contribution (ajout de son nom dans le fichier Readme.md crée dans l'exercice 1), récupérez ses changements
+
+
+## Quoi versionner ?
+
+<img src="img/quoi-versionner.png">
+
+Une fois qu'on en vient a versionner, une question légitime qui intervient est le "quoi versionner". En effet, une fois mis dans un gestionnaire de version, un mot de passe est donc disponible puisque l'on peut accéder aux anciens commits. C'est donc un risque. De même pour les fichiers de type **Office suite** ou **Libre Office** qui sont des fichiers compressés et pour lesquelles le fonctionnement par différences ne fonctionne pas correctement, git ne peut pas voir la différence au sens de l'ajout d'une ligne sur ce genre de fichiers vu qu'ils sont compressés.
+
+L'idée étant de faire un état des lieux sur différents cas d'usages pour différents types de fichiers.
+
+### Type de fichiers et versionning
+#### **Texte vs binaire**
+
+Git est un gestionnaire de versions qui fonctionne en différences.
+
+Il utilise les différences entre les lignes de différents fichiers pour permettre d'identifier les différences. Les différences entre 2 binaires sont donc toujours de l'ordre de l'intégralité du fichier, a cause du formatage binaire.
+
+Pour tous les fichiers textes que sont le code, les fichiers .txt, les fichiers de configuration non sensibles (voir plus bas), git permet une gestion facilitée du versionning puisque les différences relèvent d'ajouts de quelques ko entre différents fichiers, ce qui fait que c'est très peu cher d'avoir tout le dépôt sur le poste de chacun.
+
+
+#### **Output**
+Les fichiers de types output n'ont aucun intêret a être versionné, puisqu'ils sont destinés a être jetables ou sont déjà reconstruisibles par le projet par exemple.
+
+#### **Pas d'information locale / personnelle / secrète**
+
+Toutes les informations personnelles, mais également les informations de configuration de python spécifiques au poste de travail n'ont pas lieu, un versionning doit donc se penser comme agnostique de l'environnement pour des enjeux de portabilité, de reproductibilité et de sécurité.
+
+### Mettre en place des règles sur le versionning
+
+Git permet a juste titre de limiter les fichiers versionnés par l'ajout d'un fichier **.gitignore** à la racine du dépot (au même niveau que le dossier .git).
+
+Ce fichier **.gitignore** liste, au travers d'expressions régulières sur chacunes des lignes, les fichiers qu'il est convenu de ne pas versionner dans le projet.
+
+Voici par exemple un fichier gitignore pour python : https://github.com/github/gitignore/blob/master/Python.gitignore 
+
+
+
+### Exercices
+
+Vous arrivez sur un projet n'utilisant pas Git. A votre arrivée, on vous remet une clé USB contenant le code de l'application/des données.  
+Pour chacun des cas suivants, créer un dépôt Git en respectant les règles / bonnes pratiques de versionning.
+
+- [Cas 1](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-1.zip)
+- [Cas 2](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-3.zip)
+- [Cas 3](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-3.zip)
+- Bonus : [Cas 4](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-4.zip)
+
+### Aller plus loin
+
+- Git LFS : référencer les fichiers lourds et non versionnables via des fichiers plus légers
+
+## Gitflow
+<img src="img/git-flow.png">
+
+L'objectif du gitflow est de déterminer un mode de fonctionnement en projet, permettant de découper le travail en degré de maturité :
+- Une version stable de l'application / qui peut tourner et est fonctionnelle (derniere version livrée)
+- Une version en cours de l'application, qui peut tourner mais demande probablement un travail avant l'intégration ou attend que certaines fonctionnalités soient existantes
+- Des versions temporaires de l'application, pour lesquelles des fonctionnalités sont en cours de développement : ex correction d'un bug ou ajout d'un endpoint
+
+Pour cela il est nécessaire de s'intéresser aux branches.
+### Branche
+<img src="img/gitbranche.png">
+
+Une branche sur git est une ligne du temps indépendante du temps, elle démarre d'une version/commit précis(e). Elle permet de travailler sur des tâches plus grandes et également de travailler a distance en équipe sur des tâches identifiées.
+
+> [lien vers une documentation avec plus de précisions](https://www.atlassian.com/git/tutorials/using-branches#:~:text=Git%20branches%20are%20effectively%20a%20pointer%20to%20a%20snapshot%20of%20your%20changes.&text=Instead%20of%20copying%20files%20from,not%20a%20container%20for%20commits.)
+
+A partir du commit/de la version ou vous vous trouvez vous pouvez créer une branche sur cette version avec la commande git branch: 
+```bash
+# Creer une branche appelée nouvelle-branche
+git branch nouvelle-branche
+# Supprimer la branche nouvelle-branche en local
+git branch -d nouvelle-branche
+```
+
+Vous pouvez également vous déplacer sur les branches avec la même commande que pour le déplacement sur les commits : 
+```bash
+# Si nouvelle-branche existe
+git checkout nouvelle-branche
+# Créer une branche nouvelle-branche et s'y déplacer
+git checkout -b nouvelle-branche
+```
+
+
+
+### Merge
+
+Pour intégrer des changements issus des branches, une commande existe : **git merge**
+
+Pour intégrer des changements de la branche nouvelle-branche
+
+```
+git merge nouvelle-branche
+```
+
+Pour aller plus loin : [conflits git](https://opensource.com/article/20/4/git-merge-conflict)
+
+### Feature / stable branches
+
+<img src="img/gitflowexample.jpg">
+Une idée est donc de créer des branches pour les différents niveau de maturité du projet. Pour cela au niveau du Gitflow, on entendra parler de :  
+
+#### **Branches stables**
+- Master/main est la branche de référence, stable et contenant la version la plus stable possible du projet
+- release-1 / release-2 ..., sont des branches qui intègrent des changements depuis le développement
+- develop est une branche contenant le travail en cours sanctuarisé/stabilisé
+
+#### **Features branches**
+- Hotfix
+
+> souvent hotfix-**
+
+
+Ce sont des branches qui permettent de faire des changements brutaux et urgents dans les versions stables suite a des reports de bugs de sécurité par exemple.
+
+- Feature
+
+> souvent topic-**
+
+Les feature branches sont des branches sur lesquels les développement de nouvelles fonctionnalités sont fait.
+
+Workflow classique :
+
+Un développement est fait, il est proposé au review pour l'équipe du projet et puis il est ensuite ajouté a la dernière version de develop.
+
+### Exercice
+
+1) Sur le dépot git crée sur le tp2, créez la branche **develop**, envoyez la sur le dépot distant
+2) Créez une autre branche en local appelée **add-message**, qui part de cette branche, ajoutez y un fichier message.txt qui contient un message personnalisé de votre choix ou "oui"
+3) ajoutez les changements, créez une version/commit sur la branche
+4) déplacez vous sur la branche **develop** et ajoutez ces changements via **merge**, enfin supprimez la branche **add-message**
+
+### Aller plus loin
+- Petit guide de workflows classique de travail: 
+https://gist.github.com/blackfalcon/8428401
+
+## Ecosystème Git : issues, merge requests, forks
+
+Un écosystème s'est construit autour de ces concepts, et certains outils/concepts sont apparus au sein des gestionnaires de version permettant une organisation plus macro.
+
+### Glossaire
+
+**issue**: déclaration d'un bug / d'une nouvelle fonctionnalité demandée : se fait par l'intermédiaire de petits tickets intégrés à Github ou Gitlab par exemple
+
+**merge request/pull request**: création d'une demande d'intégration d'une branche (**merge**) pour y effectuer une/des review(s) et y proposer des corrections.
+
+**fork**: copie d'un dépot git.
+cas d'usage : 
+- contribution à un projet où l'on a pas les droits, pour travailler sur la copie et proposer les changements sur le projet (ex: correction bug, opensource, etc..)
+- récupération d'un projet qui va passer dans le domaine privé par une personne ou une communauté (c'est pour cela qu'on parle souvent de fork)
+
+### Exemple avec Gitlab
+
+#### **Signaler un bug via issue**
+<img src=img/gif-issue.gif>
+
+#### **Workflow pull request / merge request**
+<img src=img/pr.png>
+
+#### **Cloner un projet via fork**
+<img src=img/git-fork.gif>
+
+
+### Exercices
+
+- Cadavre exquis
