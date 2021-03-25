@@ -141,12 +141,12 @@ Vous n'avez probablement pas utilisé pip ou sinon votre config est "particuliè
 
 Synchronisez maintenant les différents environnements sur lesquels vous travaillez pour valider l'exercice, en respectant les règles !
 
-### Pour aller plus loin : Canoniser l'environnement d'execution
+### Canoniser l'environnement d'execution
 
 <img src="img/pip-freeze.jpeg"/>
-Pour mieux partager un environnement qui permet de faire tourner le code, pip propose de sanctuariser les dépendances dans un fichier **requirements.txt**
+Pour mieux partager un environnement qui permet de faire tourner le code, pip propose de sanctuariser les dépendances dans un fichier **requirements.txt**. C'est l'équivalent des fichiers `package.json` en Javascript (npm), `pom.xml` (Java / maven) ...
 
-Il permet de le générer en faisant à la racine du projet:
+Il permet de le générer en faisant à la racine du projet (note : ce fichier peut aussi être créé / modifié à la main) :
 
 ```
 pip freeze > requirements.txt
@@ -156,7 +156,9 @@ Et d'installer toutes les dépendances venant d'un fichier de ce type, encore a 
 
 ```
 pip install -r requirements.txt
-```
+```  
+
+**Le fichier requirements.txt doit être versionné avec votre code sur git**
 
 ## Exercice 3 - Mise en place d'une API
 
