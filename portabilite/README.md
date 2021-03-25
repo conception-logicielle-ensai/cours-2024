@@ -418,7 +418,7 @@ if __name__ == "__main__":
 python main.py
 ```
 
-Ouvrir le navigateur sur `http://localhost:8080` :thumbsup:
+Ouvrir le navigateur sur `http://localhost:8000` :thumbsup:
 
 ## Pour aller plus loin
 
