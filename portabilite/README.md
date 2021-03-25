@@ -143,7 +143,8 @@ Synchronisez maintenant les différents environnements sur lesquels vous travail
 
 ### Canoniser l'environnement d'execution
 
-<img src="img/pip-freeze.jpeg"/>
+<img src="img/pip-freeze.jpeg"/>  
+
 Pour mieux partager un environnement qui permet de faire tourner le code, pip propose de sanctuariser les dépendances dans un fichier **requirements.txt**. C'est l'équivalent des fichiers `package.json` en Javascript (npm), `pom.xml` (Java / maven) ...
 
 Il permet de le générer en faisant à la racine du projet (note : ce fichier peut aussi être créé / modifié à la main) :
