@@ -12,7 +12,7 @@ Il est demandé de le suivre avant le premier cours.
 Ce cours est divisé en 6 chapitres :
 
 - [Git avancé](git/README.md) : rappels sur l'utilisation de git, travail collaboratif, issues, merge / pull requests
-- Runtime : lancer du code sans IDE, comprendre l'environnement d'exécution
+- [Portabilite](portabilité/README.md) : lancer du code sans IDE, comprendre l'environnement d'exécution, mise en place d'un serveur web
 - Reproductibilité / portabilité : gestion des dépendances, externalisation de la configuration
 - Introduction aux systèmes Linux : prise en main d'un terminal, commandes classiques
 - Intégration continue : automatisation du build, testing, publication de package
