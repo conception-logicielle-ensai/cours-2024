@@ -175,12 +175,13 @@ def init:
   cursor = connection.cursor()
   requetecreationTableRequetes = """CREATE TABLE IF NOT EXISTS requetes(requete_id INTEGER PRIMARY KEY AUTOINCREMENT, date_text text)"""
   cursor.execute(requetecreationTableRequetes)
-  
+  connection.commit()
 def insertRequestIntoDB():
   connection = sqlite3.connect('db')
   cursor = connection.cursor()
   requeteLogTable="""INSERT INTO requetes(date_text) VALUES(datetime('now'))"""
   cursor.execute(requeteLogTable)
+  connection.commit()
 ```
 
 </p>
