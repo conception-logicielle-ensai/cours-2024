@@ -13,6 +13,7 @@ Ce cours est divisé en différents chapitres :
 
 - [Git avancé](git/README.md) : rappels sur l'utilisation de git, travail collaboratif, issues, merge / pull requests
 - [Portabilité](portabilite/README.md) : lancer du code sans IDE, comprendre l'environnement d'exécution, mise en place d'un serveur web
+- [Etude de cas](etude2cas/README.md) : étude de cas d'une application sous différents aspects (code, architecture, reproductibilité ...)
 - Introduction aux systèmes Linux : prise en main d'un terminal, commandes classiques
 - Intégration continue : automatisation du build, testing, publication de package
 - Déploiement : combinaison des chapitres précédents pour aller jusqu'à la mise en production d'une application
