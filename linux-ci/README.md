@@ -13,7 +13,7 @@ Pour ces 2 chapitres, la phase de théorie sera réduite au minimum (objectif 15
 Pour la première partie, il vous suffit d'avoir accès à un terminal sur un environnement linux.  
 Vous pouvez par exemple utiliser :  
 
-- Votre machine personnelle s'il s'agit d'un Linux ou un MacOS (les commandes sur un terminal MacOS sont très proches des commandes Linux). Si vous êtes sur Windows vous avez la possibilité d'installer une machine virtuelle ou d'utiliser WSL (Windows Subsystem for Linux). 
+- Votre machine personnelle s'il s'agit d'un Linux ou un MacOS (les commandes sur un terminal MacOS sont très proches des commandes Linux). Si vous êtes sur Windows vous avez la possibilité d'installer une machine virtuelle ou d'utiliser WSL (Windows Subsystem for Linux). Vous pouvez aussi utiliser `git bash` (en général installé avec git for windows) qui contient un mini noyau linux avec des commandes basiques (globalement suffisantes pour la séance d'aujourd'hui).
 - Un environnement dans le SSPCloud : [Datalab](https://datalab.sspcloud.fr) ou [Che](https://che.lab.sspcloud.fr) (attention, Che ne fournit pas d'accès root / administrateur sur les environnements).
 - [Katacoda](https://katacoda.com/scenario-examples/courses/environment-usages/ubuntu-2004) : un bac à sable dans un système Ubuntu (20.04).  
 
@@ -27,6 +27,7 @@ Il est cependant conseillé d'être équipé d'un Visual Studio Code avec le plu
 La ligne de commande (on parle aussi de terminal) est un environnement intéractif dans lequel vous pouvez exécuter des instructions et obtenir le résultat.  
 Quelques informations / conseils avant de commencer :  
 * La touche `tab` de votre clavier va devenir votre meilleur allié. Cette touche permet d'autocompléter une commande à partir du contexte. N'hésitez pas à en abuser !  
+* Une commande accepte en général des paramètres (comme une fonction) ainsi que des options qui sont préfixées par `-` (pour les options raccourcies dont le nom tient en un caractère) ou `--` (pour les options de plusieurs caractères). 
 * Un grand pouvoir implique de grandes responsabilités : les commandes que vous allez exécuter peuvent avoir un impact (limité par les droits que vous possédez sur la machine). Sur les sytèmes linux, à partir du moment où vous avez le droit de faire quelque chose, linux ne vous empêchera jamais de le faire. Bonne nouvelle pour vous si vous utilisez un environnement dans le cloud (`SSPCloud`, `Katacoda` ...), ces environnements sont en général très isolés et le casser n'a pas d'impact sur le reste, les autres utilisateurs ...  
 
 Les 2 principaux types d'opérations réalisables dans un terminal sont :  
@@ -43,10 +44,11 @@ Les 2 principaux types d'opérations réalisables dans un terminal sont :
 * `pwd` : afficher le chemin du dossier courant (Print Working Directory) (https://linux.die.net/man/1/pwd)  
 * `cat fichier` : lire contenu du fichier (https://man7.org/linux/man-pages/man1/cat.1.html)  
 * `mkdir dossier` : créer un dossier (MaKe DIRectory) (https://man7.org/linux/man-pages/man1/mkdir.1.html)  
+* `touch monfichier.ext` : créer un fichier vide (https://man7.org/linux/man-pages/man1/touch.1.html)
 
 #### Exercice : petit tour du propriétaire  
 
-* La racine d'un système linux est `/`. Quels sont les dossiers présents à la racine du système ?  
+* La racine d'un système linux est `/`. Quels sont les dossiers présents à la racine du système ? Comparer la structure à https://www.linux.com/training-tutorials/linux-filesystem-explained/  
 
 ### Lancement de programmes
 
@@ -85,7 +87,7 @@ Note : l'utilisation d'`apt` requiert les droits super-utilisateur (root). Vous 
 * Que fait `cmatrix` ?  
 * Tester `telnet towel.blinkenlights.nl`
 
-(Au besoin, installer les paquets nécessaires)
+(Au besoin, installer les paquets nécessaires)  
 
 ### Une mise en pratique ludique  
 
