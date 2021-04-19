@@ -135,7 +135,7 @@ python3 -m venv venv
 ## windows
 .\venv\Scripts\activate
 ## linux
-./venv/Scripts/activate
+source venv/bin/activate
 ```
 
 Si vous faites cela, il serait favorable d'ajouter le fichier venv au gitignore puisque cette environnement n'est pas à versionner.
