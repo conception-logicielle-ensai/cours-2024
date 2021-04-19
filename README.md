@@ -15,7 +15,7 @@ Ce cours est divisé en différents chapitres :
 - [Portabilité](portabilite/README.md) : lancer du code sans IDE, comprendre l'environnement d'exécution, mise en place d'un serveur web
 - [Etude de cas](etude2cas/README.md) : étude de cas d'une application sous différents aspects (code, architecture, reproductibilité ...)
 - [Introduction aux systèmes Linux et initiation à l'intégration continue](linux-ci/README.md) : prise en main d'un terminal, commandes classiques et initiation au principe d'intégration continue
-- Intégration continue : automatisation du build, testing, publication de package
+- [Consolidation](consolidation/README.md) : TP de consolidation reprenant tous les concepts précédents
 - Déploiement : combinaison des chapitres précédents pour aller jusqu'à la mise en production d'une application
 
 ## Langage
