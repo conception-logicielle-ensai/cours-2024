@@ -333,7 +333,7 @@ Reprenez ce qui a été fait la semaine dernière pour intégrer les tests en co
 
 Créez un fichier : 
 
-.gitlab-ci.yaml
+.gitlab-ci.yml
 
 ```yaml=
 tests:
