@@ -14,9 +14,10 @@ Le système d'exploitation n'est pas imposé, les mises en pratique se feront pr
 
 Les versions doivent être "relativement" récentes.
 
-## GIT
+## Git
 
-Git doit être disponible avec, de préférence, la possibilité de se connecter à des dépôts via SSH.
+Tout le code que l'on va écrire sera versionné sur Git et il vous sera régulièrement demandé de récupérer / partager du code via Git.  
+La première séance de cours sera dédiée à des rappels et approfondissements sur Git.  
 Pour Windows, on pourra utiliser https://gitforwindows.org/.
 
 ```
@@ -25,7 +26,7 @@ git clone https://gitlab.com/olevitt/conception-logicielle.git
 
 ## IDE
 
-Bien que vous soyez fortement incités à tester et utiliser différents IDE, il est demander d'installer [Visual Studio Code](https://code.visualstudio.com/) qui propose des plugins pour l'ensemble des langages et outils que nous allons découvrir ensemble.  
+Bien que vous soyez fortement incités à tester et utiliser différents IDE, il est demandé d'installer [Visual Studio Code](https://code.visualstudio.com/) qui propose des plugins pour l'ensemble des langages et outils que nous allons découvrir ensemble.  
 Les plugins suivants sont conseillés :
 
 - Python `ms-python.python`
@@ -45,7 +46,7 @@ python --version
 pip --version
 ```
 
-Les deux doivent mentionner une version 3.X de python (préférablement 3.8 ou 3.9).
+Les deux doivent mentionner une version 3.X de python (préférablement 3.9 ou 3.10).
 
 A noter : sur certains systèmes, il y a cohabitation de python 2 et python 3. Dans ce cas, l'appel à python 3 et à pip se font respectivement via `python3` et `pip3`.
 
