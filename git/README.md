@@ -45,16 +45,23 @@ Pour aller plus loin : https://git-scm.com/book/en/v2/Getting-Started-About-Vers
 
 ### Un dossier pour les gouverner tous
 
-Git fonctionne avec un dossier qui lui est propre, le dossier **.git**, ce dossier contient toutes les informations permettant de fonctionner.
-Il permet par exemple, en conservant les différences entre les différentes version de naviguer d'une version a l'autre.
+Git fonctionne avec un dossier qui lui est propre : le dossier **.git**. Ce dossier contient toutes les informations permettant à git de fonctionner (configuration du dépôt, historique ...).  Il permet par exemple, en conservant les différences entre les différentes version de naviguer d'une version a l'autre.  
+> Présence d'un dossier .git = dépôt git  
 
-Pour commencer le versionning d'un projet avec Git, il faut donc créer ce dossier par la commande :
+> Funfact : le dossier .git est un dossier caché mais ça ne vous empêche pas de le parcourir / d'y toucher. Son format est cependant assez cryptique pour un humain. Allez y faire un tour à l'occasion :)  
+
+> Funfact 2 : sur les systèmes d'exploitation respectables, un fichier / dossier dont le nom commence par un `.` est caché (et inversement)  
+
+
+
+Si vous voulez créer un dépôt git dans un dossier :  
 
 ```
 git init
 ```
 
-Cette commande initialise votre dépôt Git.
+Cette commande va créer un dossier `.git` minimal et donc, un dépôt Git.  
+> A noter : la plupart du temps, vos dépôts git seront créés à partir d'un dépôt externe (cf `git clone` plus loin) plutôt qu'à partir d'un dossier local
 
 Documentation officielle de la commande : https://git-scm.com/docs/git-init
 
@@ -105,7 +112,7 @@ git commit -m "message de commit"
 ```
 
 > Un commit contient, en plus de l'ensemble des modifications, plusieurs métadonnées dont la date, l'auteur (nom et email) et un message.  
-> Funfact : ces métadonnées sont déclaratives, rien ne vous empêche d'anti/post dater un commit :)
+> Funfact : ces métadonnées sont déclaratives, rien ne vous empêche d'anti/post dater un commit par exemple :)
 
 Pour aller plus loin : https://git-scm.com/docs/git-commit
 
@@ -128,10 +135,6 @@ Et vous pouvez accéder aux précédentes versions de votre application par l'ut
 git checkout <commit-hash>
 ```
 
-Pour aller plus loin :
-
-- écrire une belle histoire: https://hackernoon.com/beginners-guide-to-interactive-rebasing-346a3f9c3a6d
-
 ### Exercice 1
 
 Pour ce premier exercice, écrivons ensemble l'histoire suivante :
@@ -150,6 +153,7 @@ Félicitations ! Vous avez un joli dépôt git contenant une première histoire.
 
 - [Git mystery](https://github.com/nivbend/gitstery)
   > Projet git d'enquête sur un meurtre mobilisant diverses compétences sur Git, sympathique pour comprendre les notions et la navigation entre les versions via Git.
+- écrire une belle histoire: https://hackernoon.com/beginners-guide-to-interactive-rebasing-346a3f9c3a6d
 
 ## Git, gitlab, github ...
 
