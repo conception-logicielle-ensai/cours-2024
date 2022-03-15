@@ -178,6 +178,15 @@ def insertRequestIntoDB():
   requeteLogTable="""INSERT INTO requetes(date_text) VALUES(datetime('now'))"""
   cursor.execute(requeteLogTable)
   connection.commit()
+def fetchDb():
+  connection = sqlite3.connect('db')
+  cursor = connection.cursor()
+  requeteLogTable="""SELECT * from requetes"""
+  res = cursor.execute(requeteLogTable)
+  data = res.fetchall()
+  connection.commit()
+  print(data)
+
 ```
 
 </p>
