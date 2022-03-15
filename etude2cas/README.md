@@ -169,19 +169,19 @@ import sqlite3
 def init:
   connection = sqlite3.connect('db')
   cursor = connection.cursor()
-  requetecreationTableRequetes = """CREATE TABLE IF NOT EXISTS requetes(requete_id INTEGER PRIMARY KEY AUTOINCREMENT, date_text text)"""
-  cursor.execute(requetecreationTableRequetes)
+  requetecreationTableRequete = """CREATE TABLE IF NOT EXISTS requete(requete_id INTEGER PRIMARY KEY AUTOINCREMENT, date_text text)"""
+  cursor.execute(requetecreationTableRequete)
   connection.commit()
 def insertRequestIntoDB():
   connection = sqlite3.connect('db')
   cursor = connection.cursor()
-  requeteLogTable="""INSERT INTO requetes(date_text) VALUES(datetime('now'))"""
+  requeteLogTable="""INSERT INTO requete(date_text) VALUES(datetime('now'))"""
   cursor.execute(requeteLogTable)
   connection.commit()
 def fetchDb():
   connection = sqlite3.connect('db')
   cursor = connection.cursor()
-  requeteLogTable="""SELECT * from requetes"""
+  requeteLogTable="""SELECT * from requete"""
   res = cursor.execute(requeteLogTable)
   data = res.fetchall()
   connection.commit()
@@ -225,8 +225,8 @@ from sqlalchemy import create_engine
 
     with engine.connect() as connection:
     
-        connection.execute('DROP TABLE IF EXISTS requetes')
-        connection.execute('''CREATE TABLE requetes(requete_id INTEGER PRIMARY KEY AUTOINCREMENT, date_text text)''')
+        connection.execute('DROP TABLE IF EXISTS requete')
+        connection.execute('''CREATE TABLE requete(requete_id INTEGER PRIMARY KEY AUTOINCREMENT, date_text text)''')
                  
         data = ( 
           { "requete_id": 1, "date_text": "2022-03-15 11:35:58"},
@@ -234,10 +234,10 @@ from sqlalchemy import create_engine
         )
     
         for line in data:
-            connection.execute("""INSERT INTO requetes(requete_id, date_text) 
+            connection.execute("""INSERT INTO requete(requete_id, date_text) 
             VALUES(:requete_id, :date_text)""", **line)
         
-        result = connection.execute('''SELECT * from requetes''')
+        result = connection.execute('''SELECT * from requete''')
 
         for row in result:
             print(row)
@@ -257,14 +257,14 @@ SQLAlchemy propose également des fonctionnalités d'ORM.
 exemple de code: 
 ```python=
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String,Sequence
 
 Base = declarative_base()
 
-class User(Base):
-    __tablename__ = 'users'
-    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
-    name = Column(String(50))
+class Requete(Base):
+    __tablename__ = 'requete'
+    requete_id = Column(Integer, Sequence('requete_id_seq'), primary_key=True)
+    date_text = Column(String(50))
 ```
 
 
