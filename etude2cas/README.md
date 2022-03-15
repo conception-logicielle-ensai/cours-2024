@@ -75,13 +75,9 @@ Pour répondre aux besoins de bon respect des règles établies en amont (voir l
 
 > Exemples de plugins : Python, flake8, PyFormat, Python-autopep8
 
-<details><summary>aide</summary><p>
-
-![](https://i.imgur.com/redSw5Y.png)
-
-</p></details>
 :boom: N'hésitez pas à configurer le format on save.
 
+> La semaine dernière on a utilisé pipreqs : c'était de l'analyse statique de dépendances : https://github.com/bndr/pipreqs
 Aller plus loin : [Sonar](https://www.sonarqube.org/)
 
 ### Analyse dynamique
@@ -216,28 +212,26 @@ Cet engine utilise du coup un driver via la méthode [create_engine('dialect')](
 Exemple de code : 
 ```python=
 from sqlalchemy import create_engine
+    engine = create_engine('sqlite:///:memory:')
 
-engine = create_engine('sqlite:///:memory:')
-
-with engine.connect() as connection:
+    with engine.connect() as connection:
     
-    connection.execute(text('DROP TABLE IF EXISTS Cars'))
-    connection.execute(text('''CREATE TABLE Cars(Id INTEGER PRIMARY KEY, 
-                 Name TEXT, Price INTEGER)'''))
+        connection.execute('DROP TABLE IF EXISTS requetes')
+        connection.execute('''CREATE TABLE requetes(requete_id INTEGER PRIMARY KEY AUTOINCREMENT, date_text text)''')
                  
-   data = ( { "Id": 1, "Name": "Audi", "Price": 52642 },
-             { "Id": 2, "Name": "Mercedes", "Price": 57127 },
-             { "Id": 3, "Name": "Skoda", "Price": 9000 },
-             { "Id": 4, "Name": "Volvo", "Price": 29000 },
-             { "Id": 5, "Name": "Bentley", "Price": 350000 },
-             { "Id": 6, "Name": "Citroen", "Price": 21000 },
-             { "Id": 7, "Name": "Hummer", "Price": 41400 },
-             { "Id": 8, "Name": "Volkswagen", "Price": 21600 }
-    )
+        data = ( 
+          { "requete_id": 1, "date_text": "2022-03-15 11:35:58"},
+          {"requete_id":2,"date_text":"2022-03-15 12:46:38" }
+        )
     
-    for line in data:
-        con.execute(text("""INSERT INTO Cars(Id, Name, Price) 
-            VALUES(:Id, :Name, :Price)"""), **line)
+        for line in data:
+            connection.execute("""INSERT INTO requetes(requete_id, date_text) 
+            VALUES(:requete_id, :date_text)""", **line)
+        
+        result = connection.execute('''SELECT * from requetes''')
+
+        for row in result:
+            print(row)
 ```
 
 #### Aller plus loin : concept d'Object Relationnal Mapping
