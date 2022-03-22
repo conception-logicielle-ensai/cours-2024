@@ -216,7 +216,9 @@ Pour cette partie vous aurez donc besoin d'un dépot git.
 
 - Commencez par récupérer le dépot : https://gitlab.com/MDZP17/projet-pytest
 
-- Puis créer votre dépôt et notifiez le :100: 
+- Puis créer un dépôt sur https://git.lab.sspcloud.fr/ et pushez le code du tp dessus :100: 
+
+> Remarque : vous pouvez regarder le premier tp
 
 :warning: Les tests ont été effectués avec pytest, c'est une application pas trop complexe, donc ça devrait le faire.
 
@@ -405,6 +407,7 @@ test-python-application:
 </p></details>
 
 :boom: Ajoutez donc tout cela a votre dépot git via un add/commit/push
+
 
 #### Finalisation 
 Précedemment, on a vu que via la ligne de commande on pouvait effectivement lancer les tests et le lint dans un environnement qui contient python3 et pip.
