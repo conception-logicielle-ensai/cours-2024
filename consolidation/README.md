@@ -194,7 +194,11 @@ Importez la via pip
 
 ```
 pip install requests
+# Si vous êtes dans un venv
 pip freeze > requirements.txt
+# Sinon
+pip install pipreqs
+pipreqs
 ```
 
 </p></details>
