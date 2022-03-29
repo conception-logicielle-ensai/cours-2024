@@ -193,13 +193,16 @@ Côté python, de nombreuses librairies existent mais pour le coup, vous êtes i
 
 *Un mot est un ensemble id, caracteres
 ```python=
-class Mot:
+class Mot(BaseModel):
     id:int
     caracteres:str
     def __init__(self,id,caracteres):
         self.id=id
         self.caracteres=caracteres
 ```
+
+> Remarque la definition des types pour Pydantic et donc FastApi se fait via l'héritage de la classe BaseModel : https://pydantic-docs.helpmanual.io/usage/models/ . Cela vous permet de "Parser" vos objets pour les exposer via FastApi.
+
 
 Exemple pour faire des endpoint avec request body avec fastapi : https://fastapi.tiangolo.com/tutorial/body/
 
@@ -223,7 +226,7 @@ L'idée ici est de mettre en place un webservice de pendu, webservice accessible
 
 Cela fait donc appel a 2 objets : 
 ```python=
-class Mot:
+class Mot(BaseModel):
     id:int
     caracteres:str
     def __init__(self,id,caracteres):
@@ -232,7 +235,7 @@ class Mot:
 ```
 
 ```python=
-class Guess:
+class Guess(BaseModel):
     mot:Mot
     erreurs:int
     letter:str
