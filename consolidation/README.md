@@ -351,7 +351,7 @@ tests:
 
 ### Pour aller plus loin : Cas concret Api (hors tp)
 
-Changez d'api et fonctionner par exemple avec l'api twitter. 
+Changez d'api et fonctionnez par exemple avec l'api twitter. 
 :warning: Attention : Cette api requiert Authentification
 => Authentification 
   => Externalisation de la configuration : un token c'est votre identité.
@@ -368,4 +368,6 @@ token = os.getenv('TWITTER_API_TOKEN')
 Vous pouvez donc par exemple partir de cette configuration, l'adapter pour utiliser le token avec **requests** et ajouter votre token dans votre configuration.
 
 => Vous êtes prêt à travailler avec des données twitter ...
+
+> ex : https://github.com/Ragatzino/fetch-tweets
 
