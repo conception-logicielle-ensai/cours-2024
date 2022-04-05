@@ -201,10 +201,21 @@ class Mot(BaseModel):
         self.caracteres=caracteres
 ```
 
+On s'attend donc a déposer un Mot : 
+```json
+{
+  "id":2,
+  "caracteres":"villageoise"
+}
+```
+
+Et a le stocker dans une liste de mots en mémoire (variable globale définie en amont par ex)
 > Remarque la definition des types pour Pydantic et donc FastApi se fait via l'héritage de la classe BaseModel : https://pydantic-docs.helpmanual.io/usage/models/ . Cela vous permet de "Parser" vos objets pour les exposer via FastApi.
 
 
 Exemple pour faire des endpoint avec request body avec fastapi : https://fastapi.tiangolo.com/tutorial/body/
+
+
 
 3. Créez maintenant dans un autre dossier un fichier main.py, ici il sera question de faire un client HTTP pour ce serveur permettant : 
     - Créer une fonction get_mots() qui permet de récupérer tous les mots disponibles sur l'api
@@ -212,6 +223,30 @@ Exemple pour faire des endpoint avec request body avec fastapi : https://fastapi
 
 Documentation requests : https://docs.python-requests.org/en/master/user/quickstart/#more-complicated-post-requests
 
+4. Nous allons ensuite passer a la persistence de ces mots, jusqu'a lors on pouvait se contenter d'une liste en mémoire. Mais au redémarrage du serveur :cut: ça disparaît.
+Nous allons donc utiliser une base de données Sqlite pour démarrer.
+
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jY5PLJmz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/naoee5v4f0g6p6khix3k.png" />
+
+
+Il va donc falloir démarrer une base de données
+```python
+from sqlalchemy import create_engine
+# On utilise une base sqlite, et on affiche tout ce qu'elle fait avec l'option echo=True
+engine= create_engine('sqlite:///base.db',echo=True)
+```
+
+Et définir notre entité Mot:
+```
+from sqlalchemy import Column,Integer,String
+class Mot(BaseModel,Base):
+    id:Column(Integer,primary_key=True)
+    caracteres:Column(String)
+    def __init__(self,id,caracteres):
+        super().__init__()
+        self.id=id
+        self.caracteres=caracteres
+```
 
 ### Bonus: TP dans le TP
 
@@ -219,8 +254,14 @@ Documentation requests : https://docs.python-requests.org/en/master/user/quickst
 
 
 L'idée ici est de mettre en place un webservice de pendu, webservice accessible via http sur les endpoints : 
-- /init en GET permettant de récupérer le premier GUESS par le serveur
-- /guess en POST pour tester un guess, la réponse permettant de continuer avec ce mot 
+- /guess en POST pour tester un guess, la réponse permettant de continuer avec ce mot
+
+La réponse attendue sera de la forme : 
+```
+{
+
+}
+```
 - /mots en GET voir plus haut
 - /mot en POST pour ajouter un mot a la liste des mots proposable par l'application pendant que le serveur tourne (acceptant donc un Mot en Request Body)
 
@@ -231,7 +272,7 @@ class Mot(BaseModel):
     caracteres:str
     def __init__(self,id,caracteres):
         self.id=id
-        self.caracteres=caracteres
+        self.caracteres=caractere
 ```
 
 ```python=
