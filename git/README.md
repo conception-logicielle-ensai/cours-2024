@@ -500,6 +500,8 @@ Vous désirez permettre a des utilisateurs de savoir l'heure qu'il est dans un p
 2. Forkez le dépot dans votre espace (sous votre nom).
 3. Vous constatez qu'il y a 2 développeurs qui ont fait des développements : Roger Roger, et Adrien Délicat. Et une branche Hotfix, qui règle une erreur typographique. Mergez là.
 
-> git merge <branch>
+```
+git merge <branch>
+```
 
 4. Lisez le code des deux développeurs et proposer une merge request de leur code vers la branche `exercice-6-develop` puis choisissez quelle version est selon vous la plus appropriée pour un projet.
