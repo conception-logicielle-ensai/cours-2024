@@ -14,7 +14,8 @@ Quelques exemples d'environnements pouvant être utilisés :
 
 - Votre machine personnelle en ayant installé GIT (pour les utilisateurs Windows, une des options : https://git-scm.com/download/win)
 - N'importe quel environnement du [SSPCloud](https://datalab.sspcloud.fr/) : Cloudshell, VSCode, Ubuntu, RStudio ...
-- [Katacoda](https://www.katacoda.com/courses/git) (nécessite inscription / authentification) : des tutoriaux intéractifs avec mise à disposition d'environnements éphémères
+- [Katacoda](https://www.katacoda.com/courses/git) (nécessite inscription / authentification) : des tutoriaux interactifs avec mise à disposition d'environnements éphémères
+- [Gitpod](https://www.gitpod.io) (nécessite inscription a partir d'un compte gitlab/github) : permet d'initier un environnement de travail a partir d'un dépot.
 
 ## Pourquoi Git ?
 
@@ -24,12 +25,15 @@ Quelques exemples d'environnements pouvant être utilisés :
 
 Vous avez besoin de Git si :
 
+- Vous désirez travailler a plusieurs
+- Vous désirez travailler sur un projet sur la durée
+- Vous désirez récupérer du code et y contribuer.
+
+Donc en soit :
+
+Vous avez besoin de Git si :
+
 - Vous écrivez au moins une ligne de code
-
-Petite histoire de la création de git : https://www.linuxjournal.com/content/git-origin-story
-
-> TLDR: Différentes solutions existaient a l'époque, soit libres, soit payantes mais Linus Torvalds n'aimait pas la solution de l'époque (SVN)
-> et travaillait avec beaucoup de développeurs Open Source, il a donc intégré du code via des mails de ses différents contributeurs, mais au bout d'un moment ce n'était plus viable, et donc il a fallu trouver une solution, et Torvalds lança un nouveau projet...
 
 ### Un système de gestion de version distribué
 
@@ -45,22 +49,22 @@ Pour aller plus loin : https://git-scm.com/book/en/v2/Getting-Started-About-Vers
 
 ### Un dossier pour les gouverner tous
 
-Git fonctionne avec un dossier qui lui est propre : le dossier **.git**. Ce dossier contient toutes les informations permettant à git de fonctionner (configuration du dépôt, historique ...).  Il permet par exemple, en conservant les différences entre les différentes version de naviguer d'une version a l'autre.  
-> Présence d'un dossier .git = dépôt git  
+Git fonctionne avec un dossier qui lui est propre : le dossier **.git**. Ce dossier contient toutes les informations permettant à git de fonctionner (configuration du dépôt, historique ...). Il permet par exemple, en conservant les différences entre les différentes version de naviguer d'une version a l'autre.
 
-> Funfact : le dossier .git est un dossier caché mais ça ne vous empêche pas de le parcourir / d'y toucher. Son format est cependant assez cryptique pour un humain. Allez y faire un tour à l'occasion :)  
+> Présence d'un dossier .git = dépôt git
 
-> Funfact 2 : sur les systèmes d'exploitation respectables, un fichier / dossier dont le nom commence par un `.` est caché (et inversement)  
+> Funfact : le dossier .git est un dossier caché mais ça ne vous empêche pas de le parcourir / d'y toucher. Son format est cependant assez cryptique pour un humain. Allez y faire un tour à l'occasion :)
 
+> Funfact 2 : sur les systèmes d'exploitation respectables, un fichier / dossier dont le nom commence par un `.` est caché (et inversement)
 
-
-Si vous voulez créer un dépôt git dans un dossier :  
+Si vous voulez créer un dépôt git dans un dossier :
 
 ```
 git init
 ```
 
-Cette commande va créer un dossier `.git` minimal et donc, un dépôt Git.  
+Cette commande va créer un dossier `.git` minimal et donc, un dépôt Git.
+
 > A noter : la plupart du temps, vos dépôts git seront créés à partir d'un dépôt externe (cf `git clone` plus loin) plutôt qu'à partir d'un dossier local
 
 Documentation officielle de la commande : https://git-scm.com/docs/git-init
@@ -116,6 +120,46 @@ git commit -m "message de commit"
 
 Pour aller plus loin : https://git-scm.com/docs/git-commit
 
+### Exercice 1
+
+Pour ce premier exercice, écrivons ensemble l'histoire suivante :
+
+- Créer un dossier pour votre projet : tp1-conception-logicielle
+- Créer un petit programme en python qui renvoie l'heure actuelle dans la console au format "HH:MM:SS" dans un fichier main.py
+- Ajoutez ce fichier dans l'index et créer une nouvelle version. (commit)
+- Ajout d'un second fichier, vide, `README.md`  
+  A quelle heure le dernier commit a t'il été écrit ? Quel est son _hash_ (identifiant) ?
+- Ajoutez un zonage sur la date pour récupérer l'heure qu'il est a New York. Créez un commit avec le message "ajout zonage".
+
+Félicitations ! Vous avez un joli dépôt git contenant une première histoire.
+
+> NB: si vous n'avez pas d'idées sur comment on peut réaliser certaines parties du tp, des aides sont disponibles dans des sections dédiées
+
+<details>
+  <summary>Aide 1</summary>
+
+```python
+from datetime import datetime
+
+current_time = datetime.now()
+current_time_formatted = current_time.strftime("%H:%M:%S")
+print(current_time_formatted)
+```
+
+> main.py (première version)
+
+```python
+from datetime import datetime
+import pytz # $ pip install pytz
+
+timezone = pytz.timezone('America/New_York')
+current_time = datetime.now(timezone)
+current_time_formatted = current_time.strftime("%H:%M:%S")
+print(current_time_formatted))
+```
+
+</details>
+
 ### Chaine de commits
 
 <img src="img/medium-reflog.png" style="border-style:groove">
@@ -125,35 +169,50 @@ Sur un dépot git existant, vous pourrez donc accéder aux différentes versions
 Vous pouvez observer la liste des commit du projet avec la commande **git log** :
 
 ```
+
 git log
 git log --pretty=oneline
+
 ```
 
 Et vous pouvez accéder aux précédentes versions de votre application par l'utilisation d'un **git checkout** :
 
 ```
+
 git checkout <commit-hash>
+
 ```
 
-### Exercice 1
+```
 
-Pour ce premier exercice, écrivons ensemble l'histoire suivante :
+git checkout <branch>
 
-- Création d'un fichier `main.py` contenant `print('hello world')`
-- Ajout d'un second fichier, vide, `requirements.txt`  
-  A quelle heure le dernier commit a t'il été écrit ? Quel est son _hash_ (identifiant) ?
-- Remplacement de `print('hello world')` par `print('salut')`
-- Création d'un dossier `test` contenant deux fichiers `input.csv` et `config.yaml`
-
-Félicitations ! Vous avez un joli dépôt git contenant une première histoire.
-
-- Bonus : [exercice 1-2](https://minio.lab.sspcloud.fr/conception-logicielle/exo1-2v2.zip)
+```
 
 ### Aller plus loin
 
 - [Git mystery](https://github.com/nivbend/gitstery)
   > Projet git d'enquête sur un meurtre mobilisant diverses compétences sur Git, sympathique pour comprendre les notions et la navigation entre les versions via Git.
 - écrire une belle histoire: https://hackernoon.com/beginners-guide-to-interactive-rebasing-346a3f9c3a6d
+
+### Exercice 2
+
+- Déplacez vous sur le premier commit de votre dépot.
+
+<details>
+  <summary>Aide 2</summary>
+
+```
+git log
+```
+
+puis
+
+```
+git checkout
+```
+
+</details>
 
 ## Git, gitlab, github ...
 
@@ -166,7 +225,7 @@ On distingue 2 catégories de forges : les forges "As A Service" qui sont mises 
 Exemples de forges "As A Service" :
 
 - [Github.com](https://github.com) est un des leaders du marché, hébergeant une grande partie du code open source et des grands projets ouverts. Github a été racheté par Microsoft en 2018 pour 7.5 milliards de dollars. Le code source de github n'est pas public.
-- [Gitlab.com](https://gitlab.com) est un concurrent très actif. Le code qui sous-tend gitlab.com est en très grande partie libre : https://gitlab.com/gitlab-org/gitlab  
+- [Gitlab.com](https://gitlab.com) est un concurrent très actif. Le code qui sous-tend gitlab.com est en très grande partie libre : https://gitlab.com/gitlab-org/gitlab
   Important : `gitlab.com` est une installation particulière du logiciel gitlab sur les serveurs de l'entreprise gitlab. Vous rencontrerez, dans votre carrière, d'autres installations du logiciel gitlab sur d'autres serveurs (cf "On premise"). Attention donc à ne pas confondre le service `gitlab.com`, le logiciel gitlab et les différentes installations de gitlab que vous rencontrerez.
 - [Bitbucket.org](https://bitbucket.org/) : moins utilisé, il appartient à Atlassian (connu pour son outil de gestion de projet / ticket `Jira`)
 
@@ -207,6 +266,16 @@ Pour aller plus loin :
 
 - Authentification : ssh/https - https://gist.github.com/grawity/4392747
 
+### Exercice 3
+
+1. Commencez par utiliser un compte existant / créer un compte sur https://gitlab.com/
+
+2. Une fois connecté, créez un nouveau dépot appelé tp1-conception-logicielle
+
+3. Ajoutez le dépot distant a votre projet
+
+4. Récupérez également, dans un autre dossier,le code du dépôt https://gitlab.com/conception-logicielle/tp1-conception-logicielle
+
 ### Travailler a distance
 
 <img src="img/ez-pull-push.png">
@@ -240,16 +309,9 @@ git push --set-upstream origin branch
 git push -u origin master
 ```
 
-### Exercices
+### Exercice 4
 
-L'objectif de cet exercice est d'appréhender les concepts du travail a distance avec Git.
-
-1. Commencez par créer un compte sur https://gitlab.com/
-2. Une fois connecté, créez un nouveau dépot appelé tp1-conception-logicielle
-3. Envoyez le premier projet que vous avez créé a l'exercice 1 sur ce dépot
-4. Récupérer le contenu du projet d'un autre camarade
-5. Ajoutez un de vos camarades sur le dépot (rôle développer/maintainer) et donnez lui le lien
-6. Après sa contribution (ajout du nom de la personne qui possède le dépot dans le fichier main.py créé dans l'exercice 1 ("salut Jean")), récupérez ses changements
+- Envoyez le code construit au TP1 sur votre dépôt distant.
 
 ## Quoi versionner ?
 
@@ -285,7 +347,7 @@ Ce fichier **.gitignore** liste, au travers d'expressions régulières sur chacu
 
 Voici par exemple un fichier gitignore pour python : https://github.com/github/gitignore/blob/master/Python.gitignore
 
-### Exercices
+### Exercice 5
 
 C'est votre premier jour de boulot ! A votre arrivée, on vous remet une clé USB contenant le code de l'application/des données.
 
@@ -309,7 +371,7 @@ Pour chacun des cas suivants, créer un dépôt Git en respectant les règles / 
 
 - Git LFS : référencer les fichiers lourds et non versionnables via des fichiers plus légers
 
-## Gitflow
+## Gitflow : Feature branch
 
 <img src="img/git-flow.png">
 
@@ -325,7 +387,7 @@ Pour cela il est nécessaire de s'intéresser aux branches.
 
 <img src="img/gitbranche.png">
 
-Une branche sur git est une ligne du temps indépendante du temps, elle démarre d'une version/commit précis(e). Elle permet de travailler sur des tâches plus grandes et également de travailler a distance en équipe sur des tâches identifiées.
+Une branche sur git est une ligne du temps indépendante des autres, elle démarre d'une version/commit précis(e). Elle permet de travailler sur des tâches plus grandes et également de travailler a distance en équipe sur des tâches identifiées.
 
 > [lien vers une documentation avec plus de précisions](https://www.atlassian.com/git/tutorials/using-branches#:~:text=Git%20branches%20are%20effectively%20a%20pointer%20to%20a%20snapshot%20of%20your%20changes.&text=Instead%20of%20copying%20files%20from,not%20a%20container%20for%20commits.)
 
@@ -359,6 +421,12 @@ git merge nouvelle-branche
 
 Pour aller plus loin : [conflits git](https://opensource.com/article/20/4/git-merge-conflict)
 
+### Rebase
+
+<img src="img/rebase-vs-merge.png">
+
+Pour faire avancer une branche jusqu'a un autre commit (en y déplaçant les changements de l'histoire), vous pouvez réaliser une opération de rebase.
+
 ### Feature / stable branches
 
 <img src="img/gitflowexample.jpg">
@@ -387,13 +455,6 @@ Les feature branches sont des branches sur lesquels les développement de nouvel
 Workflow classique :
 
 Un développement est fait, il est proposé au review pour l'équipe du projet et puis il est ensuite ajouté a la dernière version de develop.
-
-### Exercice
-
-1. Sur le dépot git crée sur le tp2, créez la branche **develop**, envoyez la sur le dépot distant
-2. Créez une autre branche en local appelée **add-message**, qui part de cette branche, ajoutez y un fichier message.txt qui contient un message personnalisé de votre choix ou "oui"
-3. ajoutez les changements, créez une version/commit sur la branche
-4. déplacez vous sur la branche **develop** et ajoutez ces changements via **merge**, enfin supprimez la branche **add-message**
 
 ### Aller plus loin
 
@@ -430,6 +491,15 @@ cas d'usage :
 
 <img src=img/git-fork.gif>
 
-### Exercices
+### Exercice 6
 
-- Cadavre exquis
+Mise en contexte :
+Vous désirez permettre a des utilisateurs de savoir l'heure qu'il est dans un pays, a partir de l'heure qu'il est au moment de leur demande. Deux collègues sont super emballés par le projet, et sont désireux de développer la solution qui s'en rapproche. Vous devez donc faire un choix.
+
+1. Sur le dépot git que vous avez récupéré, vous trouverez une branche `exercice-6-develop`, déplacez vous y.
+2. Forkez le dépot dans votre espace (sous votre nom).
+3. Vous constatez qu'il y a 2 développeurs qui ont fait des développements : Roger Roger, et Adrien Délicat. Et une branche Hotfix, qui règle une erreur typographique. Mergez là.
+
+> git merge <branch>
+
+4. Lisez le code des deux développeurs et proposer une merge request de leur code vers la branche `exercice-6-develop` puis choisissez quelle version est selon vous la plus appropriée pour un projet.

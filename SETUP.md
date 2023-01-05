@@ -21,7 +21,7 @@ La première séance de cours sera dédiée à des rappels et approfondissements
 Pour Windows, on pourra utiliser https://gitforwindows.org/.
 
 ```
-git clone https://gitlab.com/olevitt/conception-logicielle.git
+git clone https://gitlab.com/conception-logicielle/conception-logicielle.git
 ```
 
 ## IDE
@@ -55,7 +55,7 @@ A noter : sur certains systèmes, il y a cohabitation de python 2 et python 3. D
 Un des objectifs de ce cours est de vous sensibiliser aux nouvelles pratiques et technologies de développement informatique et statistique.  
 Dans ce cadre, on vous met à disposition un compte sur la plateforme de datascience SSPCloud (SSP = Service statistique public) portée par la division innovation de l'Insee.  
 On parle de `Datalab`, laboratoire de la donnée. C'est à dire, une plateforme vous proposant différents services allant du stockage de données à des environnements de développement et d'exécution.  
-Le datalab est accessible sur [https://datalab.sspcloud.fr](https://datalab.sspcloud.fr).  
+Le datalab est accessible sur [https://datalab.sspcloud.fr](https://datalab.sspcloud.fr).
 
 Des comptes vous ont déjà été créés avec comme identifiant votre **identifiant Ensai** (`idXXXX`) et comme adresse email votre **adresse email Ensai**.  
 Il ne vous reste qu'à les activer en crééant un mot de passe.  
