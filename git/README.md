@@ -17,6 +17,7 @@ Quelques exemples d'environnements pouvant être utilisés :
 - [Katacoda](https://www.katacoda.com/courses/git) (nécessite inscription / authentification) : des tutoriaux interactifs avec mise à disposition d'environnements éphémères
 - [Gitpod](https://www.gitpod.io) (nécessite inscription a partir d'un compte gitlab/github) : permet d'initier un environnement de travail a partir d'un dépot.
 
+**Feuille de commandes utiles git**: https://education.github.com/git-cheat-sheet-education.pdf
 ## Pourquoi Git ?
 
 <img src="img/versionning_problem.png">
