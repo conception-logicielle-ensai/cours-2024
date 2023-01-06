@@ -374,6 +374,8 @@ curl --output exo3-1.zip https://minio.lab.sspcloud.fr/conception-logicielle/exo
 curl --output exo3-2.zip https://minio.lab.sspcloud.fr/conception-logicielle/exo3-2.zip
 curl --output exo3-3.zip https://minio.lab.sspcloud.fr/conception-logicielle/exo3-3.zip
 curl --output exo3-4.zip https://minio.lab.sspcloud.fr/conception-logicielle/exo3-4.zip
+```
+
 ### Aller plus loin
 
 - Git LFS : référencer les fichiers lourds et non versionnables via des fichiers plus légers
