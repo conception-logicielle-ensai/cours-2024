@@ -271,9 +271,9 @@ Pour aller plus loin :
 
 1. Commencez par utiliser un compte existant / créer un compte sur https://gitlab.com/
 
-2. Une fois connecté, créez un nouveau dépot appelé tp1-conception-logicielle
+2. Une fois connecté, créez un nouveau dépot appelé mon-tp1-conception-logicielle
 
-3. Ajoutez le dépot distant a votre projet
+3. Ajoutez le dépot distant a votre projet (relier)
 
 4. Récupérez également, dans un autre dossier,le code du dépôt https://gitlab.com/conception-logicielle/tp1-conception-logicielle
 
@@ -364,7 +364,7 @@ Choisir, dans la liste ci-dessous, l'émoji le plus approprié à la situation :
 Pour chacun des cas suivants, créer un dépôt Git en respectant les règles / bonnes pratiques de versionning.
 
 - [Cas 1](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-1.zip)
-- [Cas 2](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-3.zip)
+- [Cas 2](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-2.zip)
 - [Cas 3](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-3.zip)
 - Bonus : [Cas 4](https://minio.lab.sspcloud.fr/conception-logicielle/exo3-4.zip)
 
