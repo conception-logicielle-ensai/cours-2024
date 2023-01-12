@@ -12,7 +12,7 @@ Il est demandé de le suivre avant le premier cours.
 Ce cours est divisé en différents chapitres :
 
 - [Git avancé, environnement de travail](git/README.md) : rappels sur l'utilisation de git, travail collaboratif, issues, merge / pull requests
-- [Portabilité](portabilite/README.md) : lancer du code sans IDE, comprendre l'environnement d'exécution, mise en place d'un serveur web
+- [Portabilité, configuration](portabilite-configuration/README.md) : lancer du code sans IDE, comprendre l'environnement d'exécution
 - [Etude de cas](etude2cas/README.md) : étude de cas d'une application sous différents aspects (code, architecture, reproductibilité ...)
 - [Introduction aux systèmes Linux et initiation à l'intégration continue](linux-ci/README.md) : prise en main d'un terminal, commandes classiques et initiation au principe d'intégration continue
 - [Consolidation](consolidation/README.md) : TP de consolidation reprenant tous les concepts précédents
