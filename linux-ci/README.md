@@ -446,3 +446,68 @@ test-python-application:
 </p></details>
 
 :boom: Ajoutez donc tout cela a votre dépot git via un add/commit/push 
+
+
+## Mise en place de tests 
+
+![](https://i.imgur.com/h9GnwDQ.jpg)
+
+Python est un langage de script et il peut être pertinent de vérifier si syntaxiquement il est possible d'executer tel ou tel script py, on parle ici de **linting**.
+
+Pour cela, dans l'écosystème python on utilise des outils.
+
+
+L'objectif étant de détecter le code mort, d'établir des règles pour le projet et éventuellement de déceler des problèmes avant le lancement du code.
+
+### Tests unitaires : pytest unitest
+
+![](https://i.imgur.com/o4150tm.jpg)
+
+
+Idée générale: tester une partie infime d'une application 
+
+exemple pour l'application de classification verification que la lecture d'un csv ce fait normalement : 
+
+Soit encore => Qu'un fichier csv en entrée pour la nomenclature : 
+```csv
+code;intitule
+A01Z;Culture et production animale, chasse et services annexes
+```
+
+Retourne bien après la fonction read_dict(file):
+=> 
+```python
+expectedDict:dict ={'code': 'intitule', 'A01Z': 'Culture et production animale, chasse et services annexes'}
+```
+
+Exercice : 
+
+- Crée un repertoire test
+- Dans ce repertoire créer un fichier test_app.py
+- importer la fonction read_dict de app.main
+
+> petit code snippet :
+<details><summary>Spoiler</summary>
+<p>
+
+- Créer un fichier nomenclature_NA2008.csv dans tests/nomenclatures/
+
+puis adapter le code suivant pour tests/test_app.py: 
+```python
+from app.main import read_dict
+def test_read_dict():
+    expectedDict:dict = {'code': 'intitule', 'A01Z': 'Culture et production animale, chasse et services annexes'}
+    assert read_dict('tests/nomenclatures/nomenclature_NA2008.csv') == expectedDict
+
+
+if __name__ == "__main__":
+    test_read_dict()
+    print("Everything passed")
+```
+
+Là il n'y a pas de framework de test, adaptez avec un framework de type unittest ou pytest, ils permettent une méta gestion des tests de l'application
+
+</p>
+</details>
+
+Lancez les tests via les commandes adaptées.
