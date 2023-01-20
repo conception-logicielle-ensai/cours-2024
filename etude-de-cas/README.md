@@ -528,10 +528,9 @@ https://www.digitalocean.com/community/tutorials/how-to-use-the-sqlite3-module-i
 
 L'objectif de cet exercice est enregistrez dans une base de données embarquée sqlite3 une observation par requête HTTP faite sur le endpoint `/label` en incluant le texte de la requête (paramètre `q`) ainsi qu'éventuellement la date correspondante.
 
-1. ajoutez la dépendance a sqlite3, un client pour sqlite3 dans votre projet
-2. Créez une méthode init() qui crée une table Requete dans la base de données sqlite3, qui contient un id,  un label et une date (aide: https://www.sqlitetutorial.net/sqlite-create-table/)
-3. Créez une méthode add_request qui ajoute une requete dans la bdd. (requete = label + date)
-4. Faites une methode get_requests qui recupère les requetes dans la bdd
+1. Créez une méthode init() qui crée une table Requete dans la base de données sqlite3, qui contient un id,  un label et une date (aide: https://www.sqlitetutorial.net/sqlite-create-table/)
+2. Créez une méthode add_request qui ajoute une requete dans la bdd. (requete = label + date)
+3. Faites une methode get_requests qui recupère les requetes dans la bdd
 
 Remarque: Pour lancer une requête a une bdd, on utilise des connexions. Pour le client sqlite3 on ouvre une connexion a la bdd avec la methode `sqlite3.connect('db')` et on la ferme lorsque l'on termine une transaction avec `connection.commit()`
 
