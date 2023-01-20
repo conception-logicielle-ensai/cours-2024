@@ -376,7 +376,6 @@ black --check predicat/app
 
 ### Analyse dynamique : execution
 
-![](https://i.imgur.com/XkaZ8L1.png)
 
 L'analyse dynamique consiste à lancer l'application.
 
