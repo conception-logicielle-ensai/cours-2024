@@ -127,8 +127,8 @@ import requests
 server = subprocess.Popen(['python', 'manage.py', 'runserver'])
 body = {"first": 1, "operation": "+", "second": 2}
 response = requests.post('http://127.0.0.1:8000/')
-print(response.status_code)
-print(response.content)
+assert response.status_code == 403, "Unauthorized call from external"
+
 server.terminate()
 ```
 
