@@ -166,7 +166,7 @@ browser.quit()
 1. Réalisez un Fork de ce projet (vous pouvez toujours vous référer à la séance 1)
 2. Clonez le projet a partir de votre Fork
 3. Suivez la procédure d'installation du `README.md`
-4. Lancez les tests: pour lancer les tests unittest utilise un mécanisme de discovery : essayez la commande `python -m discover application/tests -p  "*_test.py"`
+4. Lancez les tests: pour lancer les tests unittest utilise un mécanisme de discovery : essayez la commande `python -m unittest discover application/tests -p  "*_test.py"`
 5. On se propose de tester que la fonction soustraction de la classe Calculette() renvoie 2 pour 3-1, réalisez ce test
 
 <details><summary>
@@ -306,7 +306,16 @@ Tout cela dans un fichier .gitlab-ci.yml situé à la racine du dépot git (là 
 
 ## Exercice 3: Automatisation des tests sur le projet.
 
-1. Créez un fichier .gitlab-ci.yml a la racine de votre projet sur gitlab
+1. Créez un compte sur git.lab.sspcloud.fr
+- Créez un mot de passe sur cette instance de gitlab
+- Créez un projet sur ce gitlab pour votre tp
+
+2. changez la remote de votre projet 
+
+- `git remote remove origin`
+- `git remote add origin *URL HTTP*`
+- `git push -u --all origin `
+3. Créez un fichier .gitlab-ci.yml a la racine de votre projet sur gitlab
 
 ```yml
 stages:
@@ -319,9 +328,9 @@ hello-world:
     - echo "hello world"
 ```
 
-2. Commitez ce fichier, et envoyez le sur le dépot distant, une petite bulle devrait avoir apparu sur votre dépot.
+4. Commitez ce fichier, et envoyez le sur le dépot distant, une petite bulle devrait avoir apparu sur votre dépot.
 
-3. A partir du script de l'exercice 2, vous pouvez créer un script qui a partir d'une ubuntu 20.04 lance les tests sur le projet
+5. A partir du script de l'exercice 2, vous pouvez créer un script qui a partir d'une ubuntu 20.04 lance les tests sur le projet - **Enlevez sudo de votre script**
 
 ```yml
 stages:
@@ -331,8 +340,8 @@ hello-world:
   stage: test
   image: ubuntu:20.04
   script:
-    - sudo apt ...
-    - sudo apt ...
+    - apt ...
+    - apt ...
     - pip ...
     - python ...
 ```
