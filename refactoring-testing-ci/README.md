@@ -18,9 +18,6 @@ Vous êtes fraîchement embauchés pour maintenir un projet, mais vous n'aimez p
 
 Un test est l'execution d'un programme dans le but de valider le bon fonctionnement du code.
 
-
-Un test est l'execution d'un programme dans le but de valider le bon fonctionnement du code.
-
 Il peut être effectué pour valider qu'une partie du code s'execute bien (tests unitaires), que l'on répond a une fonctionnalité exprimée (tests d'intégration) ou encore que le code soit résilient (tests de charge ou autre).
 
 ### Préambule : Cas d'utilisation des tests
