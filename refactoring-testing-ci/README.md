@@ -232,22 +232,19 @@ Pour cela on se propose d'utiliser un ubuntu en ligne du sspcloud ou votre machi
 
 1. Créez un service en ligne ubuntu ou skippez cette étape.
 
-2. Lancez un terminal, essayer les commandes `python` `python3`
 
-> Spoiler: elles ne sont pas installées
-
-3. Nous allons les installer:
+2. Nous allons les installer:
 
 Mettons tout d'abord a jour les dépendances : `sudo apt update` => traduction `sudo` en tant que super utilisateur, `apt update` je met a jour ce que voit mon gestionnaire de paquet
 
 Ensuite installons python3 et pip :
 `sudo apt install python3-pip`
 
-4. Clonez votre dépot
+3. Clonez votre dépot
 
-5. Lancez vos tests
+4. Lancez vos tests
 
-6. Mettez toutes les commandes que vous avez utilisé dans un fichier. (la commande `history` peut s'avérer utile)
+5. Mettez toutes les commandes que vous avez utilisé dans un fichier. (la commande `history` peut s'avérer utile)
 
 ### Intégration continue
 
