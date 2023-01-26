@@ -14,7 +14,10 @@ Vous êtes fraîchement embauchés pour maintenir un projet, mais vous n'aimez p
 
 ## Rappels sur les tests
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd8gRcvTUhWucM60MjUE72zW0m1KD3AeXJZ3AAMWh5&s"/>
+![](https://i.imgur.com/XkaZ8L1.png)
+
+Un test est l'execution d'un programme dans le but de valider le bon fonctionnement du code.
+
 
 Un test est l'execution d'un programme dans le but de valider le bon fonctionnement du code.
 
