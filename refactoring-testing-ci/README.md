@@ -50,7 +50,7 @@ L'usage le plus classique est le `assertEqual()`
 
 Exemple :
 
-````python
+```python
 import unittest
 
 def add(a, b):
