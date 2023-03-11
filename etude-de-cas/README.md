@@ -664,9 +664,7 @@ En général pour afficher les informations dans la console/dans un fichier on u
 
 Typiquement en python on pourrait utiliser logging :
 
-```
-pip install logging
-```
+`logging` étant une librairie intégrée dans python3, pas besoin de l'installer.
 
 doc officielle : https://docs.python.org/fr/3/howto/logging.html
 
