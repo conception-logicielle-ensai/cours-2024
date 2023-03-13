@@ -510,26 +510,3 @@ tests:
 </details>
 
 ## Aller plus loin : Programmation concurrente / multithreading
-
-<div style="display: none">
-Si l'on devait vérifier une liste de produits, il y aurait une grande partie du temps de traitement qui serait lié a l'appel API. Ce temps est incompressible et donc on a besoin d'attendre autant de fois la réponse que le nombre de produits.
-
-> Pour des raisons de simplicité, les appels a l'api seront `mockés` par l'appel a la fonction sleep(1).
-
-```python
-def appel_api(barcode):
-  import time
-  time.sleep(1)
-  return {"product": {"ingredients": [{"vegan": "no"}]}}
-
-barcodes_a_requeter = ["3256540001305","3256540001304","3256540001303"]
-
-
-valeurs = list(map(lambda barcode : appel_api(barcode=barcode),barcodes_a_requeter))
-```
-Pour un utilisateur cela nous menerait a un goulot d'étranglement.
-
-Une idée pourrait être de lancer un autre script python depuis notre fonction. Ainsi on traiterait la requête en parallèle.
-
-En définissant la fonction comme asynchrone, et en récupérant tous les rés
-</div>
