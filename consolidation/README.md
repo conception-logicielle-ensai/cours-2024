@@ -532,3 +532,4 @@ Pour un utilisateur cela nous menerait a un goulot d'étranglement.
 Une idée pourrait être de lancer un autre script python depuis notre fonction. Ainsi on traiterait la requête en parallèle.
 
 En définissant la fonction comme asynchrone, et en récupérant tous les rés
+</div>
