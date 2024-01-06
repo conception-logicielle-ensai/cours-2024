@@ -1,3 +1,10 @@
++++
+title = "Mise en place"
+description = "Section sur le contour du cours"
+date = "2023-27-12"
+aliases = ["about-us", "about-hugo", "contact"]
++++
+
 # Pré-requis
 
 Liste des outils qui seront utilisés pendant ce cours.  

@@ -1,3 +1,22 @@
++++
+author = "Hugo Authors"
+title = "Markdown Syntax Guide"
+date = "2020-03-11"
+description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+tags = [
+    "markdown",
+    "css",
+    "html",
+]
+categories = [
+    "themes",
+    "syntax",
+]
+series = ["Themes Guide"]
+aliases = ["migrate-from-jekyll"]
+toc = true
++++
+
 # Etude de cas
 
 ## Objectif et organisation de la séance
@@ -53,7 +72,7 @@ En informatique on distingue souvent 2 types de programmes pour 2 types d'usages
 
 ## Qu'est ce qu'un API - webservice ?
 
-<img src="img/http.png"/>
+<img src="../../../static/etude-cas/img/http.png"/>
 
 Application Programming Interface : interface de programmation `applicative`.  
 Diffuser des données et des services à destination d'autres applications.
@@ -517,7 +536,7 @@ Sinon autre.
 
 [SQLite](https://www.sqlite.org/index.html) est un système de base de données embarqué. A la différence des systèmes de base de données classiques (type postgresql, oracle, mysql ...), l'architecture de SQLite ne contient pas de serveur. C'est l'application elle même qui écrit et lit les données à partir d'un fichier `.sqlite` contenant l'ensemble des données.  
 SQLite est un moteur de base de données fantastique, utilisé dans des milliards d'appareil (vous venez de regarder vos SMS ? Votre smartphone a utilisé SQLite. Vous venez de regarder le ciel ? Le satellite que vous voyez a très probablement des bases de données sqlite en lui). Si le sujet vous intéresse, cette conférence est formidable : https://www.youtube.com/watch?v=gpxnbly9bz4  
-![](img/sqlite.png)
+![](../../../static/etude-cas/img/sqlite.png)
 
 Pour nous, le principal avantage de SQLite va venir de son architecture simplifiée, il n'y a pas besoin de faire tourner de base de données indépendante.
 
