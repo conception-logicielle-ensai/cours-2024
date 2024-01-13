@@ -6,8 +6,9 @@ themesDir = "./themes"
 
 copyright = ""
 paginate = 3
-languageCode = "en"
-defaultContentLanguage = "en"
+languageCode = "fr"
+defaultContentLanguage = "fr"
+dateFormatFull = "02/01/2006"
 
 hasCJKLanguage = true
 enableInlineShortcodes = true
@@ -48,23 +49,16 @@ url = "/"
 weight = -100
 
 [[menu.main]]
-identifier = "about"
-name = "A Propos"
-url = "/about/"
+identifier = "cours"
+name = "Cours"
+url = "/cours/"
 weight = 10
 
 [[menu.main]]
-identifier = "posts"
-name = "cours"
-url = "/cours/"
-weight = 20
-
-
-[[menu.main]]
 identifier = "projets"
-name = "projets"
+name = "Projets"
 url = "/projets/"
-weight = 20
+weight = 10
 
 [params]
 author = "Antoine Brunetti"
@@ -86,10 +80,7 @@ avatar = "img/home-bg.jpg"
 bio = "Site du cours de conception logicielle"
 
 [params.social]
-github = "ragatzino"
-gitlab = "ragatzino"
-linkedin = "antoine-brunetti-11aab5174"
-rss = true
+
 
 # See https://giscus.app/
 [params.giscus]
@@ -100,4 +91,4 @@ category = "General"
 category_id = "DIC_kwDOHuvyh84CQjDo"
 input_position = "top"
 theme = "light_tritanopia"
-lang = "en"
+lang = "fr"
