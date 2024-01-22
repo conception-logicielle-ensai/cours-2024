@@ -22,5 +22,6 @@ Liens vers la première partie du cours :
 6. [TP configuration](/cours/portabilite/tp-configuration)
 
 Si on a le temps :
+
 7. [Portabilité et conteneurisation](/cours/portabilite/environnement-conteneur)
 8. [TP Portabilité et conteneurisation](/cours/portabilite/tp-environnement-conteneur)

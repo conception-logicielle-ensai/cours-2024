@@ -33,4 +33,57 @@ RUN pip install -r requirements.txt
 CMD ["python","main.py"]
 ```
 
-## Daemon et ligne de commande
+
+## Conteneurs : concepts clés
+**Container runtime**
+
+<img src="/img/conteneur-runtime.drawio.png"/>
+
+- Hébergement  = OS + Un ensemble de processus
+- Arrivée Namespace 2002: Isolation des processus (communication avec les autres process) + changement le propriétaire du process
+- Arrivée des Cgroups 2006 : Restreindre l'accès a certaines ressource
+
+> Container runtime : héberger un ensemble de processus indépendant isolés sur un OS.
+
+**Image Docker**
+
+![conteneur](/img/conteneur-image.drawio.png)
+
+
+
+Une image est un paquet autonome contenant tout le nécessaire pour executer des applications. Une image est le patron utilisé pour créer des conteneurs.
+
+- C'est un binaire qui comprend un ensemble de données.
+- Il est construit en couches (layers) avec une relation entre chaque image de parent / enfant
+- Partage d'image facilité : une image n'est qu'une feuille de l'arbre des images.
+- Une image c'est un blueprint pour créer un environnement d'execution fonctionnel
+
+**Conteneur**
+
+![conteneur](/img/conteneur-environnement.drawio.png)
+
+- La CLI demande le déploiement du conteneur
+- Le registry cache va chercher l'ensemble des images nécéssaires à notre conteneur
+- Le daemon démarre le conteneur avec l'ensemble des images récupérées
+- Si besoin de volumes, modification des cgroups/namespaces
+
+**Dockerfile**
+
+![dockerfile](/img/dockfile.jpg)
+
+Un fichier texte avec sa syntaxe propre permettant la constitution d'image docker. Il décrit l'ensemble des opérations (sur l'environnement de build).
+
+Il regroupe la customisation de l'environnement de départ (**FROM**), et des paramètres de lancement. Par défaut il est d'usage de paramétrer l'**ENTRYPOINT** via le Dockerfile. Il définit la commande lancée au démarrage du container.
+
+
+> Remarque : Dans le monde des conteneurs, tout est processus et un processus doit être pensé sans état interne.
+
+## Constitution d'une image docker
+
+Pour construire une image docker, il faut choisir a partir de quel base l'on souhaite construire l'image.
+
+Puis l'on doit `tagger` l'image, en lui donnant une version. Exemple :
+
+`docker build -t monimage:v1 .`
+
+Cette commande permet de construire une image `monimage` taguée `v1` a partir d'un fichier Dockerfile présent à la racine.
