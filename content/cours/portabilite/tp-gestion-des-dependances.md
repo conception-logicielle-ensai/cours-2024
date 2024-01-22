@@ -59,9 +59,11 @@ Veuillez tester sur un autre environnement votre code (ssplab, collègue).
 
 ### Exercice 4 : Création d'un environnement virtuel et changement de la structure du projet
 
-- Créez un environnement virtuel a la racine du projet
+- Créez un environnement virtuel a la racine du projet 
 - Installez les dépendances nécessaires au fonctionnement du projet
 - Déplacez les fichiers `*.py` vers le repertoire `src/datensai-unnomunique`
+
+Créez une version en veillant a ne pas versionner le venv
 ### Exercice 5 : Utilisation de poetry et construction d'un package wheel et publication sur PyPi
 
 Dans cette partie nous allons utiliser poetry plutôt que pip, vous pouvez toutefois utiliser pip si vous le souhaitez en vous référant a un tutoriel dédié de ce type :
