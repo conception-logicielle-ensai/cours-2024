@@ -22,8 +22,8 @@ Prérequis d'installation et outils pour effectuer les TPs.
 ## Parties du cours
 
 Les différentes parties du cours, actualisées.
-- [Cours du 15/01/2024 : Environnement de travail et Git avancé](/cours/git/git-local)
-- [Cours du 22/01/2024 : Portabilité, configuration et packaging](https://m.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJUmlja3JvbGwg)
+- [Cours du 15/01/2024 : Environnement de travail et Git avancé](/cours/git/)
+- [Cours du 22/01/2024 : Portabilité, configuration et packaging](/cours/portabilite/)
 
 ## Contact
 N'hésitez pas à faire des retours sur le cours par mail à :

@@ -1,5 +1,5 @@
 +++
-title = "Introduction"
+title = "Installation"
 description = "Installation du poste de dév"
 date = 2024-01-15T17:00:01
 aliases = ["introduction"]
@@ -32,8 +32,3 @@ echo "installation de python3 et git"
 apt install -y python3-pip git-all
 snap install --classic code
 ```
-
-### Configuration TP2
-
-Le TP2 nécessite l'installation de docker. Cela en executant le script suivant : 
-
