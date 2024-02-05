@@ -48,6 +48,8 @@ Exemple d'usages :
 pip3 install pylint
 # puis
 pylint ./app
+# Vous pouvez le lancer depuis partout avec la commande :
+pylint $(git ls-files '*.py')
 ```
 
 > Quel intêret me diriez vous : 

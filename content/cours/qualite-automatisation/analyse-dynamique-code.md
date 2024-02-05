@@ -53,6 +53,8 @@ if __name__ == '__main__':
 
 > Unittest permet l'extension de sa classe TestCase pour récupérer toutes les fonctions qui nous seront utiles dans le testing
 
+Pour lancer les tests il faut effectuer la commande : 
+`python3 -m unittest discover -s test -p "test_*.py"`
 ### Isolation des comportements : Mocking
 
 En programmation , les mocks (simulacres ou mock object) sont des objets simulés qui reproduisent le comportement d'objets réels de manière contrôlée.
@@ -109,17 +111,36 @@ Typiquement cela reviendrait a lancer le serveur et a faire une requete dessus d
 
 ```python
 import unittest
-from unittest.mock import MagicMock
 import requests
-
 class TestApi(unittest.TestCase):
-
+    @classmethod
+    def setUpClass(cls):
+        import subprocess
+        cls.apiprocess = subprocess.Popen(["uvicorn", "main:app"])
+        cls.wait_for_api()
+    @classmethod
+    def tearDownClass(cls):
+        cls.apiprocess.terminate()
+    @classmethod
+    def wait_for_api(cls):
+        import time
+        url = "http://localhost:8000/"
+        delay = 1
+        attempts = 100
+        for _ in range(attempts):
+            try:
+                requests.get(url)
+                break
+            except requests.ConnectionError:
+                time.sleep(delay)
+        else:
+            raise TimeoutError(f"API didn't start in {delay*attempts} seconds")
     def test_get_label_confiture_ok(self):
-        reponse_http = requests.get("http://localhost:8000/label?confiture")
-        self.assertEquals(response_http.status_code,200)
+        response_http = requests.get("http://localhost:8000/")
+        self.assertEqual(response_http.status_code,200)
 ```
 
-Mais cela n'est pas l'usage le plus classique. Pour des tests fonctionnels et end to end (en condition réelles).
+Cela fonctionne pour une API. On pourrait également utiliser l'implémentation `TestClient` de FASTAPI our des tests fonctionnels et end to end (en condition réelles).
 
 <div class="alert alert-info">
   <strong> Pour info </strong>:
@@ -154,6 +175,7 @@ class WebsiteTest(HttpUser):
         self.client.get("/")
 ```
 
+L'objectif de ces outils de tests de charge est de vous permettre de tester sur des environnements réels l'arrivée de plus en plus massive d'utilisateur et de suivre les temps de réponse afin de repérer des limites.
 <div class="alert alert-info">
   <strong> Pour aller plus loin</strong> <br/> 
 Il est de bon ton lorsqu'on réalise ce genre de tests de s'outiller parallelement avec des outils de monitoring. De nombreux outils existent, et en python on pourra par exemple utiliser l'outil <b>sentry</b> :

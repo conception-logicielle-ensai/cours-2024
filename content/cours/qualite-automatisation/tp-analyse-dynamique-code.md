@@ -224,4 +224,56 @@ class TestCache(unittest.TestCase):
 
 ## Exercice 6 - test de l'API - test fonctionnel
 
+Implémentez un test qui démarre votre API puis lance une requête dessus et vérifie que le résultat est cohérent.
+
+> Quels problèmes peuvent être rencontrés dans l'usage d'un tel test ?
+
+<details><summary><b>=> Solution (clickable) </b></summary>
+<p>
+
+
+```python
+import unittest
+import requests
+class TestApi(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        import subprocess
+        cls.apiprocess = subprocess.Popen(["uvicorn", "main:app"])
+        cls.wait_for_api()
+    @classmethod
+    def tearDownClass(cls):
+        cls.apiprocess.terminate()
+    @classmethod
+    def wait_for_api(cls):
+        import time
+        url = "http://localhost:8000/"
+        delay = 1
+        attempts = 100
+        for _ in range(attempts):
+            try:
+                requests.get(url)
+                break
+            except requests.ConnectionError:
+                time.sleep(delay)
+        else:
+            raise TimeoutError(f"API didn't start in {delay*attempts} seconds")
+    def test_get_label_confiture_ok(self):
+        response_http = requests.get("http://localhost:8000/")
+        self.assertEqual(response_http.status_code,200)
+```
+
+</p>
+</details>
+
 ## Exercice 7 - Montée en charge de l'API
+
+S'exercer sur locust a partir de la documentation disponible ici : 
+
+https://docs.locust.io/en/stable/index.html
+
+A partir du volet get_started, démarrer un serveur locust qui peut effectuer une requête sur le endpoint `/` d'une application web.
+
+Testez ensuite sur votre application lancée en local en mode **headless**
+
+<a href="https://docs.locust.io/en/stable/quickstart.html#direct-command-line-usage-headless">https://docs.locust.io/en/stable/quickstart.html#direct-command-line-usage-headless</a>
