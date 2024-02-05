@@ -119,9 +119,12 @@ class TestApi(unittest.TestCase):
         self.assertEquals(response_http.status_code,200)
 ```
 
-Mais cela n'est pas l'usage le plus classique. Pour des tests fonctionnels et end to end (en condition réelles). Il est plus classique d'utiliser des framework comme `Selenium`.
+Mais cela n'est pas l'usage le plus classique. Pour des tests fonctionnels et end to end (en condition réelles).
 
-Selenium est un outil qui permet de simuler des comportements utilisateurs en utilisant des drivers de navigateurs.
+<div class="alert alert-info">
+  <strong> Pour info </strong>:
+  On verra la semaine prochaine l'outil selenium qui permet de tester les applications web et sites web. On aurait pu également l'utiliser ici mais c'est un peu overkill. Selenium est un outil qui permet de simuler des comportements utilisateurs en utilisant des drivers de navigateurs.
+</div>
 
 > Fun fact : le saviez vous ? Vous faites des requêtes HTTP a chaque fois que vous parcourez des pages web. 
 

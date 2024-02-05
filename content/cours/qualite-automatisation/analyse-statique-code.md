@@ -55,6 +55,10 @@ pylint ./app
 Pour le style : La cohérence du code, permettre de se fixer des règles entre développeurs `as code` qui ensuite sont péreinnes et factuelles.
 Pour la vérification : Eviter les erreurs au lancement du code, et donc anticiper les bugs 🐛
 
+<div class="alert alert-info">
+  <strong> Pour aller plus loin </strong> <br/>L'usage et les règles appliquées sont bien entendues paramétrables :  ex : <a href="https://www.codeac.io/documentation/pylint-configuration.html">https://www.codeac.io/documentation/pylint-configuration.html</a>
+</div>
+
 ## Formatting
 
 <img src="/img/formatting.jpg">
@@ -99,6 +103,12 @@ Les SAST peuvent repérer des vulnérabilités telles que les injections SQL, le
 
 Pour ce cours nous utiliserons l'outil Snyk mais de nombreux outils permettent de couvrir l'analyse de la sécurité des applications.
 
+Différent types d'attaque en sécurité informatique: 
+- Injection (SQL, texte, ..) ~50% : on manipule les entrants de l'application pour dépasser les fonctionnalités prévues.
+- Cross Site Scripting : On injecte un script dans une application pour qu'elle l'execute ensuite pour effectuer des actions malveillantes
+- Failles de sécurité - CVE : Bugs connus contenus dans des librairies et versions des systèmes qui sont ensuites exploités.
+- Attaque par déni de service - DDOS: attaque pour surcharger l'usage d'un service au niveau réseau / mémoire pour empêcher tout ou partie de ses usages possibles.
+- Man in the middle : récupération des informations utilisateurs pour usurper son identité et donc corrompre un système d'information
 
 <div class="alert alert-info">
   <strong> Pour aller plus loin</strong> <br/> L'outil Sonar, très utilisé pour l'analyse statique et la détection de faille de sécurité a l'INSEE et ailleurs pour des raisons d'installation on premise : <a href="https://www.sonarqube.org/">Lien vers sonar</a>

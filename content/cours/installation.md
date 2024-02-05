@@ -32,3 +32,16 @@ echo "installation de python3 et git"
 apt install -y python3-pip git-all
 snap install --classic code
 ```
+
+### Installation de docker
+
+
+
+
+<details>
+  <summary>Si var-lib-dpkg-lock-frontend- ...</summary>
+
+
+https://askubuntu.com/questions/1114678/what-process-created-the-var-lib-dpkg-lock-frontend-file-in-ubuntu
+
+</details>
