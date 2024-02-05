@@ -9,9 +9,9 @@ header_img= "img/analysestattp.svg"
 
 Pour ce TP on partira cette fois ci d'un projet déjà élaboré par une équipe au sein du ssplab. Prédicat.
 
-<a href="https://github.com/InseeFrLab/predicat.git">https://github.com/InseeFrLab/predicat.git</a>
+**https://github.com/InseeFrLab/predicat.git**
 
-Pour faciliter la vie des gens, j'ai moi même forké ce projet dans la groupe conception logicielle 
+Pour faciliter la vie des gens, j'ai forké ce projet dans le groupe `conception logicielle ensai` sur github, si vous ne voulez pas notifier la personne que vous forkez son projet.
 
 <a href="https://github.com/conception-logicielle-ensai/predicat.git"> https://github.com/conception-logicielle-ensai/predicat.git </a> 
 
@@ -76,7 +76,7 @@ Installons les paquets black, isort et pylint.
 
 - Appliquez le formattage avec black et isort
 
-`black app` et `isort app`
+`black app` et `isort --profile black app`
 
 Réappliquez votre linter sur l'application. Constatez vous un changement dans la notation du code ? 
 
