@@ -168,6 +168,12 @@ Vous venez de vous bruler, et malgré le vol, vous avez un accès premium pour l
 </p></details>
 </p></details>
 
-### Pour aller plus loin : système de permissions des fichiers
+<div class="alert alert-info">
+  <strong> Pour aller plus loin :
+</strong> <br/> 
+système de permissions des fichiers linux :
+<a href="https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/">https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/</a>
+</div>
 
-https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/
+
+
