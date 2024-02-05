@@ -4,7 +4,7 @@ description = "Section sur le contour du cours"
 date = "2023-27-12"
 aliases = ["cours"]
 tags = ["introduction","git","python"]
-header_img= "img/wave.svg"
+header_img= "img/cours.svg"
 +++
 
 ## Introduction
@@ -24,6 +24,7 @@ Prérequis d'installation et outils pour effectuer les TPs.
 Les différentes parties du cours, actualisées.
 - [Cours du 15/01/2024 : Environnement de travail et Git avancé](/cours/git/)
 - [Cours du 22/01/2024 : Portabilité, configuration et packaging](/cours/portabilite/)
+- [Cours du 05/02/2024 : Analyse du code et automatisation](/cours/qualite-automatisation/)
 
 ## Contact
 N'hésitez pas à faire des retours sur le cours par mail à :

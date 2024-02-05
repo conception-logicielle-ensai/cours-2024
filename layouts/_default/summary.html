@@ -12,7 +12,8 @@
         </div>
     </a>
     <p class="post-meta">
-        Cours du {{ .Date.Format "2 Jan 2006" }}
+        Cours du {{ .Date | time.Format ":date_full" }}
+
     </p>
 </div>
 <hr>

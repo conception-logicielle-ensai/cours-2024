@@ -4,7 +4,7 @@ description = "Section sur les projets et examen"
 date = "2023-27-12"
 aliases = ["cours"]
 tags = ["projets","git","python"]
-header_img= "img/repo.svg"
+header_img= "img/projets.svg"
 +++
 
 ## Modalités d'examen

@@ -1,4 +1,6 @@
 {{ $header_img := .Scratch.Get "header_img" }}
+{{ $months_fr := slice "janvier" "février" "mars" "avril" "mai" "juin" "juillet" "août" "septembre" "octobre" "novembre" "décembre" }}
+
 
 {{ if .IsPage }}
 <style type="text/css">
@@ -25,7 +27,9 @@
                         <h1>{{ .Title }}</h1>
                         <h2 class="subheading">{{ $.Params.subtitle }}</h2>
                         <span class="meta">
-            Cours du {{ .Date.Format "2 Janvier 2006"}}
+            Cours du {{ with .Date }}
+{{ .Day }} {{ index $months_fr (sub .Month 1) }} {{ .Year }}
+{{ end }}
           </span>
                     </div>
                 </div>
