@@ -10,7 +10,7 @@ Maintenant qu'on a vu quelques outils, il s'avère pertinent de les lancer le pl
 
 ## Scripting et automatisation : Présentation de Tox
 
-![tox](img/tox.png)
+<img src="img/tox.png"/>
 
 Pour cela on va voir quelques outils actuels qui nous permettent d'automatiser la chaine de tests et de qualité de nos développement.
 
