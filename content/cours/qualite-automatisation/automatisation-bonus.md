@@ -1,5 +1,5 @@
 +++
-title = "Automatisation - gitlab"
+title = "Automatisation - Bonus gitlab"
 description = "Bonus du cours sur l'automatisation"
 date = 2024-02-05T00:00:09
 tags = ["tox","python","gitlab","ci-cd"]

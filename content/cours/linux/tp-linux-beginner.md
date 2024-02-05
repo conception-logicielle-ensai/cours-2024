@@ -1,5 +1,5 @@
 +++
-title = "TP - découverte de linux"
+title = "TP - Bonus découverte de linux"
 description = "Explorer un OS linux et découvrir la ligne de commande"
 date = 2024-02-05T00:00:12
 short = true
