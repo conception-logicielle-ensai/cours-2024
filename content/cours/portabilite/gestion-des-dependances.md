@@ -174,7 +174,13 @@ pip install -r requirements.txt
 En complément on pourra utiliser l'outil `pipreqs` qui fait de l'analyse statique de code (on verra a la prochaine session de quoi il s'agit). Il permet de récupérer les dépendances a partir des imports d'un projet.
 
 
+installation
+```
+pip install --user pipreqs
+```
+
 exemple d'utilisation depuis un projet
+
 ```
 pipreqs --print .
 ```
