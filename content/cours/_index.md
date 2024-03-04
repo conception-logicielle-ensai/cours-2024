@@ -26,7 +26,7 @@ Les différentes parties du cours, actualisées.
 - [Cours du 22/01/2024 : Portabilité, configuration et packaging](/cours/portabilite/)
 - [Cours du 05/02/2024 : Analyse du code et automatisation](/cours/qualite-automatisation/)
 - [Cours du 12/02/2024 : Web et protocole HTTP](/cours/http/)
-
+- [Cours du 04/03/2024 : Début des projets et suivi](/projets)
 ## Contact
 N'hésitez pas à faire des retours sur le cours par mail à :
 
