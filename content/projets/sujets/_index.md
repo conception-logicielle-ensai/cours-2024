@@ -30,7 +30,7 @@ Pour cela nous allons nous appuyer sur l'API spotify (vous pouvez également vou
 
 Pour constituer la playlist attendue en sortie du traitement nous allons extraire depuis wikipedia :
 
-- [https://fr.wikipedia.org/wiki/Liste_des_singles_num%C3%A9ro_un_en_France](Liste des single numero un en france dans le top 50 depuis 1984)
+- [https://fr.wikipedia.org/wiki/Liste_des_singles_num%C3%A9ro_un_en_France](https://fr.wikipedia.org/wiki/Liste_des_singles_num%C3%A9ro_un_en_France)
 
 De cette playlist, on souhaitera, pour chaque `titre` récupérer la date et lancer une recherche spotify pour y récupérer l'extrait audio.
 
