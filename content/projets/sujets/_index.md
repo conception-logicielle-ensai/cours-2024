@@ -98,7 +98,7 @@ Jsongenerator.io est un site qui permet la génération de données avec des for
 
 ### Concept
 
-Pour répondre à ce besoin, vous envisagez de constituer un produit qui permet de générer des données de tests pour des statisticiens et développeurs en herbe.
+Vous envisagez de constituer un produit équivalent qui permet de générer des données de tests pour des statisticiens et développeurs en herbe.
 
 Les utilisateurs de cette API pourront renseigner des types de données pour la génération à partir d'un language dédié : 
 Par exemple :
