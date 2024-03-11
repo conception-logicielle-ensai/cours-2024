@@ -19,3 +19,4 @@ QCM donné a la fin du cours du 12/02/2024
 - [Modalités d'évaluation 2024](/projets/modalites/)
 - [Sujets `exemples` pour la session 2024](/projets/sujets/)
 - [Déroulé session 1](/projets/suivi/aide-projet)
+- [Déroulé session 2](/projets/suivi/seance-deux)
